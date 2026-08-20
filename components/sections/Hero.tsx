@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import dynamic from 'next/dynamic'
 import Button from '@/components/ui/Button'
+import siteConfig from '@/content/site-config.json'
 
 // Dynamic import for 3D Scene (will be created in Session 3)
 const Scene = dynamic(() => import('@/components/3d/Scene'), {
@@ -37,8 +38,8 @@ export default function Hero() {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-zinc-900 dark:text-zinc-50"
             >
-              Hi, I'm{' '}
-              <span className="text-blue-600 dark:text-blue-400">Your Name</span>
+              {siteConfig.hero.greeting}{' '}
+              <span className="text-blue-600 dark:text-blue-400">{siteConfig.personal.name}</span>
             </motion.h1>
 
             <motion.p
@@ -47,8 +48,7 @@ export default function Hero() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-lg sm:text-xl md:text-2xl text-zinc-600 dark:text-zinc-300 mb-8"
             >
-              Full-stack developer crafting interactive web experiences with modern
-              technologies
+              {siteConfig.hero.subtitle}
             </motion.p>
 
             <motion.div
@@ -57,7 +57,7 @@ export default function Hero() {
               transition={{ delay: 0.6, duration: 0.6 }}
             >
               <Button onClick={scrollToWork} size="lg">
-                See My Work
+                {siteConfig.hero.ctaText}
               </Button>
             </motion.div>
           </motion.div>

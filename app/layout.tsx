@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import siteConfig from "@/content/site-config.json";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -9,12 +10,18 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio | Your Name",
-  description: "Full-stack developer specializing in modern web technologies and interactive 3D experiences",
+  title: siteConfig.seo.titleTemplate,
+  description: siteConfig.seo.description,
   openGraph: {
-    title: "Portfolio | Your Name",
-    description: "Full-stack developer specializing in modern web technologies and interactive 3D experiences",
+    title: siteConfig.seo.titleTemplate,
+    description: siteConfig.seo.description,
     type: "website",
+    url: siteConfig.seo.url,
+    images: [
+      {
+        url: siteConfig.seo.image,
+      },
+    ],
   },
 };
 

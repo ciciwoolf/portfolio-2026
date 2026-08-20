@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import siteConfig from '@/content/site-config.json'
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
@@ -38,7 +39,7 @@ export default function Navigation() {
             href="/"
             className="text-xl font-bold text-zinc-900 dark:text-zinc-50 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
           >
-            Portfolio
+            {siteConfig.navigation.brandName}
           </Link>
 
           {/* Desktop Navigation */}
