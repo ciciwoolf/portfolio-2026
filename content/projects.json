@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "name": "Violet River",
+    "description": "A modern web application showcasing creative digital experiences with interactive UI components and smooth animations.",
+    "image": "/images/violet-river.jpg",
+    "tags": ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    "liveUrl": "https://violet-river.example.com",
+    "githubUrl": "https://github.com/yourusername/violet-river"
+  },
+  {
+    "id": "2",
+    "name": "SpiderWeb.js",
+    "description": "An innovative JavaScript library for creating interactive network visualizations and graph-based interfaces.",
+    "image": "/images/spiderweb.jpg",
+    "tags": ["JavaScript", "D3.js", "Canvas API", "WebGL"],
+    "liveUrl": "https://spiderweb-js.example.com",
+    "githubUrl": "https://github.com/yourusername/spiderweb-js"
+  }
+]
