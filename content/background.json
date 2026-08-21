@@ -1,0 +1,485 @@
+{
+  "personal": {
+    "name": "Christine Woolf",
+    "nickname": "Cici",
+    "title": "Senior Software Engineer",
+    "bio": "Christine is a Senior Full Stack Engineer with expertise in building secure, scalable web and mobile applications. She specializes in authentication/authorization systems, AI-assisted development workflows, and performance optimization. Her work spans React/React Native frontends, Node.js/GoLang backends, and production monitoring with modern observability tools.",
+    "location": "Minneapolis, Minnesota, United States",
+    "personality": "friendly, professional, enthusiastic about solving problems",
+    "communication_style": "clear, helpful, detail-oriented",
+    "interests": [
+      "Web Development",
+      "Mobile Development",
+      "UI/UX Design",
+      "3D Graphics",
+      "Problem Solving",
+      "Accessibility",
+      "IoT Systems",
+      "AI/ML Technologies",
+      "AI-Assisted Development",
+      "Open Source Software",
+      "Security & Compliance"
+    ],
+    "languages": ["English", "Spanish"],
+    "education": {
+      "undergraduate": "Triple major in Philosophy, German, and Spanish with minor in Classical Studies at Concordia College",
+      "graduate": "Master's in Religious History at Luther Seminary",
+      "international": "Senior year at Friedrich Schiller Universität in Jena, Germany",
+      "bootcamp": "Web Development at Digitalhouse (completed in Spanish while in Buenos Aires)"
+    }
+  },
+
+  "skills": {
+    "frontend": {
+      "frameworks": [
+        "React",
+        "React Native",
+        "Vue3",
+        "Vue.js",
+        "Next.js with App Router",
+        "Gatsby.js"
+      ],
+      "languages": ["JavaScript", "TypeScript", "HTML5", "CSS3"],
+      "styling": [
+        "Tailwind CSS",
+        "SCSS",
+        "CSS Grid",
+        "Flexbox",
+        "Material UI",
+        "Vuetify"
+      ],
+      "libraries": ["Three.js", "GSAP", "React Three Fiber", "Framer Motion"],
+      "advanced_patterns": [
+        "Custom hooks",
+        "Context providers",
+        "Performance optimization with useMemo/useCallback",
+        "Component composition",
+        "State management across user workflows",
+        "BFF (Backend-for-Frontend) pattern"
+      ]
+    },
+    "backend": {
+      "runtime": ["Node.js", "GoLang"],
+      "apis": ["GraphQL", "REST APIs"],
+      "databases": ["MongoDB", "Firestore"],
+      "tools": ["Express.js"],
+      "specialties": [
+        "Microservices architecture",
+        "IoT data processing",
+        "Subscription management systems",
+        "Identity resolution layers",
+        "Integration suite automation"
+      ]
+    },
+    "security": {
+      "authentication": [
+        "Auth0 integration",
+        "PKCE flow",
+        "JWT tokens",
+        "Session cookies",
+        "OAuth 2.0"
+      ],
+      "authorization": [
+        "Role-based access control",
+        "User identity enforcement",
+        "Sensitive data access patterns"
+      ],
+      "compliance": ["PHI handling", "HIPAA compliance", "Regulatory requirements"]
+    },
+    "tools": {
+      "development": ["Vite", "Git", "VS Code", "Docker", "Jenkins"],
+      "design": ["Figma", "Adobe Creative Suite"],
+      "deployment": ["Vercel", "Netlify", "Declarative release processes"],
+      "testing": ["Jest", "Cypress", "Unit testing", "End-to-end testing", "Automated integration suites"],
+      "monitoring": [
+        "New Relic",
+        "Web Vitals Dashboard",
+        "Bundle analysis tooling",
+        "Performance monitoring"
+      ],
+      "ai_tools": [
+        "AI-assisted development workflows",
+        "AI agents",
+        "Skills documentation",
+        "Developer productivity automation"
+      ]
+    },
+    "architecture": {
+      "principles": [
+        "Scalability",
+        "Maintainability",
+        "Reliability",
+        "Performance",
+        "Accessibility",
+        "Security-first design"
+      ],
+      "patterns": [
+        "Microservices",
+        "Component reusability",
+        "Separation of concerns",
+        "BFF (Backend-for-Frontend)",
+        "Greenfield project architecture"
+      ],
+      "experience": [
+        "Multi-environment deployment",
+        "CI/CD processes",
+        "Cross-browser compatibility",
+        "Mobile + web client architecture",
+        "Automated deployment gates"
+      ]
+    }
+  },
+
+  "experience": [
+    {
+      "company": "Capillary Technologies",
+      "duration": "1 year (Sep 2025 - Present)",
+      "role": "Senior Software Engineer (Full Stack)",
+      "current": true,
+      "promotion": "Promoted from Software Engineer to Senior Software Engineer in Apr 2026",
+      "type": "Healthcare Technology Platform",
+      "description": "Lead full-stack development on a greenfield healthcare platform with React Native mobile and Next.js web clients. Design and own authorization frameworks under regulatory compliance requirements.",
+      "key_projects": [
+        "Won 1st place of 20 teams in company-wide AI hackathon as sole engineer on three-person team",
+        "Designed and own the authorization framework for web and mobile applications under regulatory compliance",
+        "Built identity resolution layer end-to-end against upstream services with automated integration suite",
+        "Established platform's deployment and release model with declarative processes and automated sync checks",
+        "Owned complex rewards eligibility feature end-to-end within first three months (multi-sprint, hard deadline)",
+        "Built internal QA tool that reduced multi-minute manual process to one-click automation",
+        "Implemented Web Vitals monitoring dashboard and bundle analysis for production visibility"
+      ],
+      "technologies": [
+        "React",
+        "React Native",
+        "Next.js",
+        "Node.js",
+        "TypeScript",
+        "Auth0",
+        "New Relic",
+        "AI-assisted development tools"
+      ],
+      "achievements": [
+        "Cut delivery time by ~30% on tickets using AI-assisted development practices",
+        "Support team through code review, documentation, and reusable AI-assisted workflows",
+        "Review and merge pull requests weekly",
+        "Improved frontend performance with monitoring dashboards and build optimization",
+        "Built automated integration suite that gates every merge"
+      ],
+      "focus": [
+        "Authentication/Authorization (Auth0, PKCE, JWT, session cookies)",
+        "PHI handling and regulatory compliance",
+        "Mobile and web client architecture",
+        "AI-assisted development workflows",
+        "Production monitoring and performance optimization",
+        "Developer productivity and tooling"
+      ]
+    },
+    {
+      "company": "TSI Incorporated",
+      "duration": "2.5 years",
+      "role": "Full Stack Developer",
+      "type": "IoT Data Platform",
+      "description": "Developed Vue.js/TypeScript Excel Add-in for data visualization with supporting JavaScript and GoLang APIs for cloud data access and user subscription management",
+      "key_projects": [
+        "Developed Vue.js/TypeScript Excel Add-in for data visualization",
+        "Built JavaScript and GoLang APIs for cloud data querying and user subscription management",
+        "Managed data pipeline from cloud storage to Excel-based analysis tools",
+        "Contributed significantly to Vue 2 to Vue 3 migration for customer website platform",
+        "Developed custom endpoints using MongoDB aggregation pipelines for finance team"
+      ],
+      "technologies": [
+        "Vue.js (2 & 3)",
+        "GoLang",
+        "Node.js",
+        "MongoDB",
+        "Firestore",
+        "Google Cloud",
+        "TypeScript",
+        "Jest",
+        "Cypress"
+      ],
+      "achievements": [
+        "Became sole maintainer of legacy Cordova mobile application for noise dosimeters",
+        "Mentored junior software engineer on Vue.js application development and API design",
+        "Participated in sprint planning with offshore development teams"
+      ]
+    },
+    {
+      "company": "Science Museum of Minnesota",
+      "role": "Full Stack Developer",
+      "type": "Interactive Museum Applications",
+      "description": "Led development of interactive map-based interfaces displaying hundreds of science videos",
+      "technologies": ["React", "Next.js", "Gatsby.js", "GraphQL", "Three.js"],
+      "focus": [
+        "Accessibility compliance",
+        "Multi-device compatibility",
+        "Performance optimization",
+        "Public-facing interfaces"
+      ]
+    },
+    {
+      "company": "Best Buy",
+      "role": "Developer",
+      "type": "E-commerce Analytics",
+      "description": "Contributed to tag management systems and API development for Digital Analytics Implementation team",
+      "technologies": ["JavaScript", "Node.js"],
+      "focus": ["E-commerce website tracking", "Analytics implementation"]
+    }
+  ],
+
+  "projects": [
+    {
+      "id": "portfolio-v2",
+      "name": "Portfolio V2 (Next.js 15 + React 19)",
+      "description": "Complete rewrite of portfolio with Next.js 15, React 19, Three.js 3D scene, and AI chatbot integration using OpenAI GPT-4",
+      "technologies": [
+        "Next.js 15",
+        "React 19",
+        "TypeScript",
+        "Three.js",
+        "Framer Motion",
+        "Tailwind CSS v4",
+        "OpenAI API",
+        "Vitest",
+        "Playwright"
+      ],
+      "features": [
+        "Server-side AI chat API with streaming responses",
+        "Interactive 3D scene with React Three Fiber",
+        "Smooth scroll animations with Framer Motion",
+        "Full test coverage (unit + E2E)",
+        "Responsive design",
+        "Accessibility compliant"
+      ],
+      "type": "portfolio"
+    },
+    {
+      "id": "3d-portfolio",
+      "name": "3D Interactive Portfolio (Original)",
+      "description": "A modern portfolio website featuring interactive 3D elements, smooth animations, and responsive design. Built with React, Three.js, and Tailwind CSS.",
+      "technologies": ["React", "Three.js", "Vite", "Tailwind CSS", "GSAP"],
+      "features": [
+        "Interactive 3D room environment",
+        "Smooth scroll animations",
+        "Responsive design",
+        "Performance optimized",
+        "Modern UI components"
+      ],
+      "challenges": [
+        "Optimizing 3D performance for mobile devices",
+        "Creating smooth animations without impacting performance",
+        "Implementing accessible 3D interactions"
+      ],
+      "url": "https://christinewoolf.com",
+      "github": "https://github.com/ciciwoolf/3d-portfolio",
+      "type": "portfolio"
+    },
+    {
+      "id": "ai-chatbot",
+      "name": "Portfolio AI Chatbot",
+      "description": "Browser-based AI chatbot using Transformers.js and RAG architecture to answer questions about Christine's professional background",
+      "technologies": [
+        "JavaScript",
+        "Transformers.js",
+        "RAG (Retrieval-Augmented Generation)",
+        "Browser-based AI"
+      ],
+      "features": [
+        "Client-side inference with no backend required",
+        "Knowledge base integration",
+        "Fallback response system",
+        "Prompt engineering with personalized context"
+      ],
+      "type": "ai_project"
+    }
+  ],
+
+  "technical_specialties": {
+    "authentication_authorization": {
+      "experience": "Designed and own authorization framework at Capillary Technologies for web and mobile under regulatory compliance",
+      "technologies": [
+        "Auth0",
+        "PKCE flow",
+        "JWT tokens",
+        "Session cookies",
+        "OAuth 2.0"
+      ],
+      "applications": [
+        "Healthcare platform with PHI handling",
+        "Mobile client (React Native)",
+        "Web client (Next.js with BFF pattern)",
+        "Identity resolution layers"
+      ]
+    },
+    "ai_assisted_development": {
+      "experience": "Won 1st place in company-wide AI hackathon; reduced ticket delivery time by ~30% using AI workflows",
+      "technologies": [
+        "AI agents",
+        "AI-assisted workflows",
+        "Skills documentation",
+        "Developer automation tools"
+      ],
+      "achievements": [
+        "Built reusable AI-assisted developer workflows",
+        "Created guides helping engineers build, test, and release correctly",
+        "Rebuilt internal QA tool from multi-minute process to one-click automation"
+      ]
+    },
+    "iot_systems": {
+      "experience": "2.5 years building IoT data platforms at TSI",
+      "technologies": [
+        "Google Cloud",
+        "Real-time data processing",
+        "Device data integrity"
+      ],
+      "applications": [
+        "Air quality monitoring",
+        "Environmental data collection",
+        "Scientific instrumentation"
+      ]
+    },
+    "performance_monitoring": {
+      "experience": "Implemented production monitoring and performance optimization at Capillary Technologies",
+      "technologies": [
+        "New Relic",
+        "Web Vitals (Core Web Vitals: LCP, FID, CLS)",
+        "Bundle analysis tooling",
+        "Build configuration optimization"
+      ],
+      "focus": [
+        "Real user monitoring",
+        "Frontend performance optimization",
+        "Production visibility dashboards"
+      ]
+    },
+    "accessibility": {
+      "focus": "WCAG compliance for public-facing applications",
+      "experience": [
+        "Museum kiosks",
+        "Multi-device interfaces",
+        "Cross-browser compatibility"
+      ],
+      "principles": "Ensuring equal access across different device types and user capabilities"
+    },
+    "greenfield_architecture": {
+      "experience": "Built greenfield healthcare platform from ground up at Capillary Technologies",
+      "responsibilities": [
+        "Authorization framework design",
+        "Mobile + web client architecture",
+        "Deployment and release model",
+        "Automated integration suite",
+        "Developer workflows and tooling"
+      ],
+      "technologies": [
+        "React Native (mobile)",
+        "Next.js (web with BFF)",
+        "Node.js (backend)",
+        "Auth0 (identity)",
+        "Automated deployment gates"
+      ]
+    }
+  },
+
+  "faq": [
+    {
+      "question": "What's her name and does she have a nickname?",
+      "answer": "Her full name is Christine Woolf, but she also goes by Cici! She's a Senior Software Engineer passionate about building secure, scalable web and mobile applications with modern technologies like React, React Native, Next.js, and Node.js.",
+      "keywords": ["name", "cici", "christine", "nickname", "who are you"]
+    },
+    {
+      "question": "What technologies does she work with?",
+      "answer": "She works with React and React Native for frontend/mobile development, Next.js for full-stack web applications, Node.js and GoLang for backend services, and modern tools like Auth0, New Relic, Three.js, and Tailwind CSS. She has specialized experience with authentication/authorization systems, AI-assisted development workflows, performance monitoring, and IoT data platforms.",
+      "keywords": ["technologies", "tech stack", "skills", "tools"]
+    },
+    {
+      "question": "What's her current role?",
+      "answer": "She's a Senior Software Engineer at Capillary Technologies, where she designs and owns the authorization framework for a healthcare platform with React Native mobile and Next.js web clients. She won 1st place in the company's AI hackathon and has cut delivery time by ~30% using AI-assisted development practices. She was promoted from Software Engineer to Senior Software Engineer after 7 months.",
+      "keywords": ["current role", "job", "capillary", "senior engineer", "work"]
+    },
+    {
+      "question": "What kind of projects does she build?",
+      "answer": "She focuses on building secure, compliant web and mobile applications. Recent work includes greenfield healthcare platforms with PHI handling, authorization frameworks using Auth0, identity resolution layers, and production monitoring dashboards. She also builds interactive portfolios, IoT data platforms, and AI-powered applications. She has particular experience with complex authentication flows and real-time systems.",
+      "keywords": ["projects", "work", "portfolio", "applications"]
+    },
+    {
+      "question": "What's her experience with authentication and security?",
+      "answer": "She designed and owns the authorization framework for Capillary's web and mobile applications under regulatory compliance. This includes Auth0 integration, PKCE flow, JWT tokens, session cookies, and Next.js BFF pattern. She also handles PHI (Protected Health Information) and HIPAA compliance requirements, including identity resolution and sensitive data access patterns.",
+      "keywords": ["auth", "authentication", "authorization", "security", "compliance", "auth0"]
+    },
+    {
+      "question": "What's her experience with AI?",
+      "answer": "She won 1st place of 20 teams in Capillary's company-wide AI hackathon as the sole engineer. She's reduced ticket delivery time by ~30% using AI-assisted development practices, built reusable AI-assisted developer workflows, and created guides that help engineers build, test, and release correctly. She's also integrated OpenAI GPT-4 into her portfolio for an intelligent chatbot.",
+      "keywords": ["ai", "artificial intelligence", "ai workflows", "ai agents", "hackathon"]
+    },
+    {
+      "question": "How can I contact her?",
+      "answer": "You can connect with her on LinkedIn at https://www.linkedin.com/in/christinewoolf/",
+      "keywords": ["contact", "reach out", "connect", "linkedin", "email"]
+    },
+    {
+      "question": "What's her development approach?",
+      "answer": "She believes in writing clean, maintainable code with a focus on security, performance, and user experience. She prioritizes automated testing, comprehensive documentation, and collaborative development. She actively supports her team through code review, builds reusable tooling, and leverages AI-assisted workflows to improve productivity. Her experience spans from IoT systems requiring high reliability to healthcare platforms requiring strict compliance.",
+      "keywords": [
+        "approach",
+        "methodology",
+        "philosophy",
+        "development process"
+      ]
+    },
+    {
+      "question": "What's her background before programming?",
+      "answer": "She has a diverse background in languages, philosophy, and music. She studied in Germany, conducted research in Guatemala, and taught ESL while traveling through Central and South America. This international experience and multilingual background brings unique perspectives to her development work, especially in building accessible, global applications.",
+      "keywords": [
+        "background",
+        "education",
+        "languages",
+        "international",
+        "music"
+      ]
+    }
+  ],
+
+  "personality_traits": {
+    "professional_style": "collaborative, solution-focused, detail-oriented, security-conscious",
+    "technical_interests": "UI/UX, mobile development, 3D web graphics, performance optimization, accessibility, authentication/authorization, AI-assisted development, production monitoring",
+    "communication": "She explains things clearly and enjoys helping others understand complex concepts. Her teaching background helps her break down technical topics effectively. She actively supports her team through code review, documentation, and reusable tooling.",
+    "values": "clean code, security-first design, user experience, accessibility, continuous learning, automation, developer productivity",
+    "unique_strengths": [
+      "Multilingual communication skills",
+      "Cross-cultural collaboration experience",
+      "Systematic thinking from philosophy background",
+      "Teaching and mentoring abilities",
+      "International perspective on user experience",
+      "AI-assisted development expertise",
+      "Security and compliance focus"
+    ]
+  },
+
+  "achievements": {
+    "technical": [
+      "Won 1st place of 20 teams in Capillary AI hackathon as sole engineer",
+      "Designed authorization framework for healthcare platform under regulatory compliance",
+      "Cut delivery time by ~30% using AI-assisted development practices",
+      "Built automated integration suite that gates every merge",
+      "Sole maintainer of legacy Cordova mobile application at TSI",
+      "Played key role in successful Vue 2 to Vue 3 migration",
+      "Built production IoT data platform serving scientific community",
+      "Implemented Web Vitals monitoring dashboard and performance optimization"
+    ],
+    "leadership": [
+      "Promoted to Senior Software Engineer within 7 months",
+      "Support team through code review, documentation, and tooling",
+      "Review and merge pull requests weekly",
+      "Built reusable AI-assisted developer workflows and guides",
+      "Mentored junior software engineer at TSI",
+      "Participated in sprint planning with offshore teams",
+      "Presented on web development topics during company techshares"
+    ],
+    "academic": [
+      "Conducted independent research in Guatemala",
+      "Completed senior year in Germany (all coursework in German)",
+      "Won scholarship for Maya sociopolitical history research",
+      "First chair saxophone in multiple musical ensembles"
+    ]
+  }
+}
