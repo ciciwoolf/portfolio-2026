@@ -18,11 +18,11 @@ export default function Button({
 
   const variantStyles = {
     primary:
-      'bg-[var(--accent)] text-[var(--foreground)] hover:bg-[var(--accent-hover)] focus:ring-[var(--accent)]',
+      'bg-accent text-white hover:bg-accent-hover focus:ring-accent',
     secondary:
-      'bg-[var(--surface-hover)] text-[var(--foreground)] hover:bg-[var(--background-secondary)] focus:ring-[var(--foreground-muted)]',
+      'bg-surface text-foreground hover:bg-surface-hover focus:ring-accent border border-border',
     outline:
-      'border-2 border-[var(--border)] text-[var(--foreground)] hover:bg-[var(--surface-hover)] focus:ring-[var(--foreground-muted)]',
+      'border-2 border-border text-foreground hover:bg-surface focus:ring-accent',
   }
 
   const sizeStyles = {

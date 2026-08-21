@@ -28,7 +28,7 @@ export default function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[var(--surface)]/80 backdrop-blur-md shadow-sm'
+          ? 'bg-background/80 backdrop-blur-md shadow-sm border-b border-border'
           : 'bg-transparent'
       }`}
     >
@@ -37,7 +37,7 @@ export default function Navigation() {
           {/* Brand */}
           <Link
             href="/"
-            className="text-xl font-bold text-[var(--foreground)] hover:text-[var(--accent)] transition-colors"
+            className="text-xl font-bold text-foreground hover:text-accent transition-colors"
           >
             {siteConfig.navigation.brandName}
           </Link>
@@ -48,7 +48,7 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-[var(--foreground-secondary)] hover:text-[var(--accent)] transition-colors"
+                className="text-sm font-medium text-foreground-secondary hover:text-accent transition-colors"
               >
                 {link.label}
               </Link>
@@ -57,7 +57,7 @@ export default function Navigation() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 rounded-md text-[var(--foreground-secondary)] hover:bg-[var(--surface-hover)] transition-colors"
+            className="md:hidden p-2 rounded-md text-foreground-secondary hover:bg-surface transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
             aria-expanded={mobileMenuOpen}
@@ -83,13 +83,13 @@ export default function Navigation() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[var(--surface)] border-t border-[var(--border)]">
+        <div className="md:hidden bg-background border-t border-border">
           <div className="px-4 pt-2 pb-3 space-y-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block px-3 py-2 rounded-md text-base font-medium text-[var(--foreground-secondary)] hover:bg-[var(--surface-hover)] hover:text-[var(--accent)] transition-colors"
+                className="block px-3 py-2 rounded-md text-base font-medium text-foreground-secondary hover:bg-surface hover:text-accent transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.label}

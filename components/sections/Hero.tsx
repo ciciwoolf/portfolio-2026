@@ -9,8 +9,8 @@ import siteConfig from '@/content/site-config.json'
 const Scene = dynamic(() => import('@/components/3d/Scene'), {
   ssr: false,
   loading: () => (
-    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[var(--surface)] to-[var(--surface-hover)] rounded-xl">
-      <p className="text-[var(--foreground-muted)]">Loading 3D Scene...</p>
+    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-surface to-surface-hover rounded-xl border border-border">
+      <p className="text-foreground-muted">Loading 3D Scene...</p>
     </div>
   ),
 })
@@ -21,7 +21,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="min-h-screen flex items-center bg-gradient-to-b from-[var(--background-secondary)] to-[var(--background)] pt-16">
+    <section className="min-h-screen flex items-center bg-gradient-to-b from-background to-background-secondary pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Desktop: Split layout */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -36,17 +36,17 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-[var(--foreground)]"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground"
             >
               {siteConfig.hero.greeting}{' '}
-              <span className="text-[var(--accent)]">{siteConfig.personal.name}</span>
+              <span className="text-accent">{siteConfig.personal.name}</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-lg sm:text-xl md:text-2xl text-[var(--foreground-secondary)] mb-8"
+              className="text-lg sm:text-xl md:text-2xl text-foreground-secondary mb-8"
             >
               {siteConfig.hero.subtitle}
             </motion.p>

@@ -7,9 +7,9 @@ export default function Projects() {
   const projects: Project[] = projectsData
 
   return (
-    <Section id="work" className="py-20 bg-[var(--background)]">
+    <Section id="work" className="py-20 bg-background-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 text-[var(--foreground)]">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12 text-foreground">
           Featured Work
         </h2>
 
@@ -18,16 +18,16 @@ export default function Projects() {
             <Card key={project.id}>
               <div className="space-y-4">
                 {/* Project Image Placeholder */}
-                <div className="w-full h-48 bg-gradient-to-br from-[var(--surface)] to-[var(--surface-hover)] rounded-lg flex items-center justify-center">
-                  <p className="text-[var(--foreground-muted)]">Project Image</p>
+                <div className="w-full h-48 bg-gradient-to-br from-surface to-surface-hover rounded-lg flex items-center justify-center border border-border">
+                  <p className="text-foreground-muted">Project Image</p>
                 </div>
 
                 {/* Project Info */}
-                <h3 className="text-2xl font-bold text-[var(--foreground)]">
+                <h3 className="text-2xl font-bold text-foreground">
                   {project.name}
                 </h3>
 
-                <p className="text-[var(--foreground-secondary)]">
+                <p className="text-foreground-secondary">
                   {project.description}
                 </p>
 
@@ -36,7 +36,7 @@ export default function Projects() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 text-sm bg-[var(--surface-hover)] text-[var(--foreground-secondary)] rounded-full"
+                      className="px-3 py-1 text-sm bg-surface text-accent rounded-full border border-border"
                     >
                       {tag}
                     </span>
@@ -50,7 +50,7 @@ export default function Projects() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[var(--accent)] hover:underline font-medium"
+                      className="text-accent hover:text-accent-hover hover:underline font-medium transition-colors"
                     >
                       Live Demo →
                     </a>
@@ -60,7 +60,7 @@ export default function Projects() {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[var(--accent)] hover:underline font-medium"
+                      className="text-accent hover:text-accent-hover hover:underline font-medium transition-colors"
                     >
                       GitHub →
                     </a>

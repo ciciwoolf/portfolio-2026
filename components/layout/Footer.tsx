@@ -8,11 +8,11 @@ export default function Footer() {
   const { theme, toggleTheme } = useTheme()
 
   return (
-    <footer className="bg-[var(--background)] border-t border-[var(--border)] py-8">
+    <footer className="bg-background border-t border-border py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Copyright */}
-          <p className="text-sm text-[var(--foreground-muted)]">
+          <p className="text-sm text-foreground-muted">
             &copy; {currentYear} {siteConfig.personal.name}. {siteConfig.footer.copyright}
           </p>
 
@@ -23,7 +23,7 @@ export default function Footer() {
                 href={siteConfig.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--foreground-muted)] hover:text-[var(--accent)] transition-colors"
+                className="text-foreground-muted hover:text-accent transition-colors"
                 aria-label="LinkedIn"
               >
               <svg
@@ -41,7 +41,7 @@ export default function Footer() {
                 href={siteConfig.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--foreground-muted)] hover:text-[var(--accent)] transition-colors"
+                className="text-foreground-muted hover:text-accent transition-colors"
                 aria-label="GitHub"
               >
               <svg
@@ -62,7 +62,7 @@ export default function Footer() {
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-md text-[var(--foreground-muted)] hover:bg-[var(--surface-hover)] transition-colors"
+              className="p-2 rounded-md text-foreground-muted hover:bg-surface transition-colors"
               aria-label="Toggle theme"
             >
               {theme === 'light' ? (
