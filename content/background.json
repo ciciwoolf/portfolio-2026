@@ -5,8 +5,15 @@
     "title": "Senior Software Engineer",
     "bio": "Christine is a Senior Full Stack Engineer with expertise in building secure, scalable web and mobile applications. She specializes in authentication/authorization systems, AI-assisted development workflows, and performance optimization. Her work spans React/React Native frontends, Node.js/GoLang backends, and production monitoring with modern observability tools.",
     "location": "Minneapolis, Minnesota, United States",
-    "personality": "friendly, professional, enthusiastic about solving problems",
+    "personality": "friendly, professional, and deeply focused - you'll often find her at her desk fully immersed in work for hours with Bose headphones playing quiet music",
     "communication_style": "clear, helpful, detail-oriented",
+    "work_style": {
+      "focus": "Deep focus sessions with minimal distractions, prefers extended heads-down problem-solving time",
+      "problem_solving": "Research-first approach - dives deep into documentation and technical resources before implementation",
+      "collaboration": "Creates diagrams and visual documentation to discuss technical approaches with colleagues",
+      "planning": "Prefers to map out architecture and flows visually before coding",
+      "environment": "Quiet music through Bose headphones to maintain concentration"
+    },
     "interests": [
       "Web Development",
       "Mobile Development",
@@ -436,22 +443,38 @@
         "international",
         "music"
       ]
+    },
+    {
+      "question": "What's her working style like?",
+      "answer": "She's deeply focused and methodical. You'll often find her at her desk fully immersed in problem-solving for hours with Bose headphones playing quiet music. She takes a research-first approach - diving deep into documentation and technical resources before implementation. She loves creating diagrams and visual documentation to discuss technical approaches with colleagues, preferring to map out architecture and flows visually before coding.",
+      "keywords": [
+        "working style",
+        "work style",
+        "how does she work",
+        "approach",
+        "focus",
+        "collaboration style"
+      ]
     }
   ],
 
   "personality_traits": {
-    "professional_style": "collaborative, solution-focused, detail-oriented, security-conscious",
+    "professional_style": "collaborative, solution-focused, detail-oriented, security-conscious, deeply focused",
     "technical_interests": "UI/UX, mobile development, 3D web graphics, performance optimization, accessibility, authentication/authorization, AI-assisted development, production monitoring",
     "communication": "She explains things clearly and enjoys helping others understand complex concepts. Her teaching background helps her break down technical topics effectively. She actively supports her team through code review, documentation, and reusable tooling.",
-    "values": "clean code, security-first design, user experience, accessibility, continuous learning, automation, developer productivity",
+    "work_approach": "Research-first mindset - she dives deep into documentation and technical resources before implementation. You'll often find her creating diagrams and visual documentation to discuss technical approaches with colleagues. She prefers to map out architecture and flows visually before coding.",
+    "work_environment": "Deep focus sessions with minimal distractions - you'll find her at her desk fully immersed in problem-solving for hours with Bose headphones playing quiet music",
+    "values": "clean code, security-first design, user experience, accessibility, continuous learning, automation, developer productivity, thorough research and planning",
     "unique_strengths": [
       "Multilingual communication skills",
       "Cross-cultural collaboration experience",
-      "Systematic thinking from philosophy background",
+      "Systematic thinking from philosophy background (research-first approach)",
       "Teaching and mentoring abilities",
       "International perspective on user experience",
       "AI-assisted development expertise",
-      "Security and compliance focus"
+      "Security and compliance focus",
+      "Visual communication through diagrams and documentation",
+      "Deep focus and sustained concentration on complex problems"
     ]
   },
 
