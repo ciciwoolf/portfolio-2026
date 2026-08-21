@@ -1,21 +1,21 @@
 {
   "personal": {
     "name": "Christine Woolf",
-    "title": "Full Stack Software Developer",
-    "tagline": "Full-stack developer crafting interactive web experiences with modern technologies",
+    "title": "Full Stack Software Engineer",
+    "tagline": "Full Stack Software Engineer crafting interactive digital experiences with modern technologies",
     "email": "your.email@example.com"
   },
   "hero": {
     "greeting": "Hi, I'm",
-    "subtitle": "Full-stack developer crafting interactive web experiences with modern technologies",
+    "subtitle": "Full Stack Software Engineer crafting interactive digital experiences with modern technologies",
     "ctaText": "See My Work"
   },
   "navigation": {
     "brandName": "Portfolio"
   },
   "social": {
-    "linkedin": "https://linkedin.com/in/yourprofile",
-    "github": "https://github.com/yourusername",
+    "linkedin": "https://linkedin.com/in/christinewoolf",
+    "github": "https://github.com/ciciwoolf",
     "twitter": ""
   },
   "resume": {
@@ -26,11 +26,20 @@
   },
   "seo": {
     "titleTemplate": "Portfolio | Christine Woolf",
-    "description": "Full-stack developer specializing in modern web technologies and interactive 3D experiences",
-    "url": "https://yourportfolio.com",
+    "description": "Full stack engineer specializing in modern mobile and web technologies",
+    "url": "https://christinewoolf.com",
     "image": "/og-image.jpg"
   },
   "footer": {
     "copyright": "All rights reserved."
+  },
+  "chat": {
+    "welcomeHeading": "Hi! Ask me anything about Christine",
+    "welcomeSubtext": "Try asking about her experience, skills, or projects!",
+    "inputPlaceholder": "Ask me about Christine...",
+    "inputPlaceholderDisabled": "Waiting for response...",
+    "sendButtonText": "Send",
+    "keyboardHint": "Press Enter to send, Shift+Enter for new line",
+    "errorPrefix": "Error:"
   }
 }

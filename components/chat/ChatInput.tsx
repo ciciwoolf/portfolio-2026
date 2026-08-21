@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect, KeyboardEvent } from 'react';
+import siteConfig from '@/content/site-config.json';
 
 interface ChatInputProps {
   onSend: (message: string) => void;
@@ -69,7 +70,7 @@ export default function ChatInput({ onSend, disabled }: ChatInputProps) {
             onChange={(e) => setMessage(e.target.value)}
             onKeyDown={handleKeyDown}
             disabled={disabled}
-            placeholder={disabled ? 'Waiting for response...' : 'Ask me about Christine...'}
+            placeholder={disabled ? siteConfig.chat.inputPlaceholderDisabled : siteConfig.chat.inputPlaceholder}
             rows={1}
             className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
             style={{ minHeight: '44px', maxHeight: '200px' }}
@@ -84,12 +85,12 @@ export default function ChatInput({ onSend, disabled }: ChatInputProps) {
           style={{ minHeight: '44px' }}
           aria-label="Send message"
         >
-          Send
+          {siteConfig.chat.sendButtonText}
         </button>
       </div>
 
       <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
-        Press Enter to send, Shift+Enter for new line
+        {siteConfig.chat.keyboardHint}
       </p>
     </div>
   );
