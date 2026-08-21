@@ -1,18 +1,27 @@
 'use client'
 
-// Placeholder 3D Scene component
-// Will be implemented in Session 3 (Tasks 21-24)
+import { Canvas } from '@react-three/fiber'
+import { PerspectiveCamera, OrbitControls } from '@react-three/drei'
+import { Suspense } from 'react'
+import Model from './Model'
+import Lights from './Lights'
+
 export default function Scene() {
   return (
-    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[var(--surface)] to-[var(--surface-hover)] rounded-xl">
-      <div className="text-center px-4">
-        <p className="text-lg font-semibold text-[var(--foreground-secondary)] mb-2">
-          3D Scene Placeholder
-        </p>
-        <p className="text-sm text-[var(--foreground-muted)]">
-          Three.js scene will be implemented in Session 3
-        </p>
-      </div>
-    </div>
+    <Canvas>
+      <PerspectiveCamera makeDefault position={[0, 0, 15]} fov={45} />
+      <OrbitControls
+        enableZoom={false}
+        enablePan={false}
+        autoRotate={true}
+        autoRotateSpeed={0.5}
+        minDistance={10}
+        maxDistance={20}
+      />
+      <Suspense fallback={null}>
+        <Model />
+        <Lights />
+      </Suspense>
+    </Canvas>
   )
 }
