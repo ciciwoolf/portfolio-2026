@@ -35,12 +35,33 @@
       "Open Source Software",
       "Security & Compliance"
     ],
-    "languages": ["English", "Spanish"],
+    "languages": ["English", "Spanish", "German (conversational)"],
     "education": {
       "undergraduate": "Triple major in Philosophy, German, and Spanish with minor in Classical Studies at Concordia College",
       "graduate": "Master's in Religious History at Luther Seminary",
       "international": "Senior year at Friedrich Schiller Universität in Jena, Germany",
+      "study_abroad": "Also studied in Greece",
       "bootcamp": "Web Development at Digitalhouse (completed in Spanish while in Buenos Aires)"
+    },
+    "international_experience": {
+      "lived_abroad": "Approximately 4 years in South America",
+      "travel_style": "Started backpacking through South America, then settled in different cities",
+      "places_lived": [
+        "Medellín, Colombia",
+        "Buenos Aires, Argentina"
+      ],
+      "study_locations": [
+        "Jena, Germany (senior year)",
+        "Greece (study abroad)"
+      ]
+    },
+    "hobbies": {
+      "fitness": "Muay Thai",
+      "creative": "Painting",
+      "reading": "Enjoys reading books",
+      "pets": "Cat lover - loves hanging with her cats",
+      "culinary": "Making chocolate desserts",
+      "travel": "Extensive backpacking and international living experience"
     }
   },
 
@@ -443,13 +464,34 @@
     },
     {
       "question": "What's her background before programming?",
-      "answer": "She has a diverse background in languages, philosophy, and music. She studied in Germany, conducted research in Guatemala, and taught ESL while traveling through Central and South America. This international experience and multilingual background brings unique perspectives to her development work, especially in building accessible, global applications.",
+      "answer": "She has a diverse background in languages, philosophy, and music. She studied abroad in Germany (senior year) and Greece, conducted research in Guatemala, and spent approximately 4 years in South America - first backpacking, then living in Medellín, Colombia and Buenos Aires, Argentina where she completed a web development bootcamp in Spanish. She taught ESL while traveling through Central and South America. This international experience and multilingual background (English, Spanish, German) brings unique perspectives to her development work, especially in building accessible, global applications.",
       "keywords": [
         "background",
         "education",
         "languages",
         "international",
-        "music"
+        "music",
+        "travel",
+        "south america",
+        "colombia",
+        "argentina"
+      ]
+    },
+    {
+      "question": "What does she do outside of work? What are her hobbies?",
+      "answer": "Christine has a rich life outside of coding! She practices Muay Thai for fitness, enjoys painting as a creative outlet, loves reading books, and spends quality time with her cats. She also loves making chocolate desserts. Her adventurous side shows in her extensive international travel - she's backpacked through South America and lived in Medellín, Colombia and Buenos Aires, Argentina for about 4 years combined, plus studied abroad in Germany and Greece.",
+      "keywords": [
+        "hobbies",
+        "outside work",
+        "personal life",
+        "interests",
+        "free time",
+        "cats",
+        "muay thai",
+        "painting",
+        "travel",
+        "chocolate",
+        "desserts"
       ]
     },
     {
@@ -476,15 +518,16 @@
     "work_environment": "Deep focus sessions with minimal distractions - you'll find her at her desk fully immersed in problem-solving for hours with Bose headphones playing quiet music",
     "values": "clean code, security-first design, user experience, accessibility, continuous learning, automation, developer productivity, thorough research and planning",
     "unique_strengths": [
-      "Multilingual communication skills",
-      "Cross-cultural collaboration experience",
+      "Multilingual communication skills (English, Spanish, German)",
+      "Cross-cultural collaboration experience from living in Colombia and Argentina",
       "Systematic thinking from philosophy background (research-first approach)",
-      "Teaching and mentoring abilities",
+      "Teaching and mentoring abilities (ESL teaching experience)",
       "International perspective on user experience",
       "AI-assisted development expertise",
       "Security and compliance focus",
       "Visual communication through diagrams and documentation",
-      "Deep focus and sustained concentration on complex problems"
+      "Deep focus and sustained concentration on complex problems",
+      "Adaptability and resilience from 4 years of international living and backpacking"
     ]
   },
 
