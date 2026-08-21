@@ -14,10 +14,10 @@ export default function Home() {
         <Projects />
 
         {/* Skills Section - Placeholder (needs design) */}
-        <section id="skills" className="py-20 bg-zinc-50 dark:bg-zinc-800">
+        <section id="skills" className="py-20 bg-[var(--background-secondary)]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">Skills</h2>
-            <p className="text-lg text-zinc-600 dark:text-zinc-400">Skills section design coming soon...</p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-[var(--foreground)]">Skills</h2>
+            <p className="text-lg text-[var(--foreground-muted)]">Skills section design coming soon...</p>
           </div>
         </section>
 
