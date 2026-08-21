@@ -1,7 +1,11 @@
+'use client'
+
 import siteConfig from '@/content/site-config.json'
+import { useTheme } from '@/components/theme/ThemeProvider'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const { theme, toggleTheme } = useTheme()
 
   return (
     <footer className="bg-white dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800 py-8">
@@ -12,7 +16,7 @@ export default function Footer() {
             &copy; {currentYear} {siteConfig.personal.name}. {siteConfig.footer.copyright}
           </p>
 
-          {/* Social Links */}
+          {/* Social Links & Theme Toggle */}
           <div className="flex items-center space-x-6">
             {siteConfig.social.linkedin && (
               <a
@@ -54,6 +58,39 @@ export default function Footer() {
               </svg>
               </a>
             )}
+
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-md text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+              aria-label="Toggle theme"
+            >
+              {theme === 'light' ? (
+                <svg
+                  className="h-5 w-5"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+              ) : (
+                <svg
+                  className="h-5 w-5"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              )}
+            </button>
           </div>
         </div>
       </div>
