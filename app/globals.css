@@ -8,8 +8,8 @@
   --foreground-secondary: #4b4e6d;
   --foreground-muted: #95a3b3;
   --border: #e5e7eb;
-  --accent: #84dcc6;
-  --accent-hover: #6fc9b5;
+  --accent: #0d9488;
+  --accent-hover: #0f766e;
   --surface: #ffffff;
   --surface-hover: #f8f9fa;
 
@@ -24,8 +24,8 @@
   --foreground-secondary: #95a3b3;
   --foreground-muted: #6b7280;
   --border: #374151;
-  --accent: #84dcc6;
-  --accent-hover: #95e4d4;
+  --accent: #14b8a6;
+  --accent-hover: #2dd4bf;
   --surface: #2a2a2a;
   --surface-hover: #333333;
 }
