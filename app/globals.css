@@ -2,8 +2,29 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --background-secondary: #f0f9f8;
+  --foreground: #17301c;
+  --foreground-secondary: #379392;
+  --foreground-muted: #4f86c6;
+  --border: #d0e8e6;
+  --accent: #4fb0c6;
+  --accent-hover: #379392;
+  --surface: #ffffff;
+  --surface-hover: #f0f9f8;
   --font-inter: 'Inter', system-ui, sans-serif;
+}
+
+.dark {
+  --background: #17301c;
+  --background-secondary: #1f4438;
+  --foreground: #ffffff;
+  --foreground-secondary: #4fb0c6;
+  --foreground-muted: #4f86c6;
+  --border: #379392;
+  --accent: #744fc6;
+  --accent-hover: #8d6bd4;
+  --surface: #379392;
+  --surface-hover: #4fb0c6;
 }
 
 @theme inline {
@@ -11,23 +32,6 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
-
-  /* Primary color palette - placeholder for design brainstorm */
-  --color-primary-50: #f0f9ff;
-  --color-primary-500: #0ea5e9;
-  --color-primary-600: #0284c7;
-  --color-primary-900: #0c4a6e;
-
-  /* Secondary color palette */
-  --color-secondary-500: #8b5cf6;
-  --color-secondary-600: #7c3aed;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
