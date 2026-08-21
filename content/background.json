@@ -12,7 +12,15 @@
       "problem_solving": "Research-first approach - dives deep into documentation and technical resources before implementation",
       "collaboration": "Creates diagrams and visual documentation to discuss technical approaches with colleagues",
       "planning": "Prefers to map out architecture and flows visually before coding",
-      "environment": "Quiet music through Bose headphones to maintain concentration"
+      "environment": "Quiet music through Bose headphones to maintain concentration",
+      "what_energizes_her": [
+        "Solving hard problems and debugging complex issues",
+        "Working with large-scale systems and understanding their architecture",
+        "Leveraging AI to create intuitive, beautiful user interfaces",
+        "Building reusable skills and tools that colleagues find useful",
+        "Implementing challenging features end-to-end",
+        "Demoing completed features to stakeholders"
+      ]
     },
     "interests": [
       "Web Development",
@@ -446,14 +454,16 @@
     },
     {
       "question": "What's her working style like?",
-      "answer": "She's deeply focused and methodical. You'll often find her at her desk fully immersed in problem-solving for hours with Bose headphones playing quiet music. She takes a research-first approach - diving deep into documentation and technical resources before implementation. She loves creating diagrams and visual documentation to discuss technical approaches with colleagues, preferring to map out architecture and flows visually before coding.",
+      "answer": "She's deeply focused and methodical. You'll often find her at her desk fully immersed in problem-solving for hours with Bose headphones playing quiet music. She takes a research-first approach - diving deep into documentation and technical resources before implementation. She loves creating diagrams and visual documentation to discuss technical approaches with colleagues, preferring to map out architecture and flows visually before coding. What energizes her: solving hard problems and debugging complex issues, working with large-scale systems, leveraging AI to create beautiful UIs, building reusable tools that colleagues find useful, and demoing challenging features to stakeholders.",
       "keywords": [
         "working style",
         "work style",
         "how does she work",
         "approach",
         "focus",
-        "collaboration style"
+        "collaboration style",
+        "what energizes",
+        "what motivates"
       ]
     }
   ],
