@@ -2,9 +2,14 @@ import OpenAI from 'openai';
 import type { ChatCompletionMessageParam } from 'openai/resources/chat/completions';
 import backgroundData from '@/content/background.json';
 
-// Initialize OpenAI client
+// Initialize OpenAI client with OpenRouter
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: process.env.OPENROUTER_API_KEY,
+  baseURL: 'https://openrouter.ai/api/v1',
+  defaultHeaders: {
+    'HTTP-Referer': process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+    'X-Title': 'Christine Woolf Portfolio',
+  },
 });
 
 /**
@@ -20,9 +25,9 @@ export async function getAIResponse(
     // Build system prompt with background context
     const systemPrompt = buildSystemPrompt();
 
-    // Call OpenAI API
+    // Call OpenRouter API (using OpenAI SDK)
     const completion = await openai.chat.completions.create({
-      model: 'gpt-4',
+      model: 'openai/gpt-3.5-turbo', // OpenRouter format: provider/model
       messages: [
         { role: 'system', content: systemPrompt },
         ...messages,
@@ -35,12 +40,12 @@ export async function getAIResponse(
     const response = completion.choices[0]?.message?.content;
 
     if (!response) {
-      throw new Error('No response from OpenAI');
+      throw new Error('No response from AI service');
     }
 
     return response;
   } catch (error) {
-    console.error('OpenAI API error:', error);
+    console.error('AI API error:', error);
 
     // User-friendly error message
     if (error instanceof Error && error.message.includes('API key')) {
