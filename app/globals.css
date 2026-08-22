@@ -1,17 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  /* Light theme - Idea 1: Modern Professional */
+  /* Light theme - Purple/Mint Experiment */
   --background: #ffffff;
   --background-secondary: #f8f9fa;
   --foreground: #222222;
   --foreground-secondary: #4b4e6d;
-  --foreground-muted: #6b7280; /* Updated for WCAG AA compliance */
+  --foreground-muted: #6b7280;
   --border: #e5e7eb;
-  --accent: #0f766e; /* Updated for WCAG AA compliance */
-  --accent-hover: #115e59;
-  --accent-button: #0f766e; /* Button background - same as accent in light mode */
-  --accent-button-hover: #115e59;
+  --accent: #9984d4; /* Soft periwinkle for focus rings */
+  --accent-hover: #7d68b8;
+  --accent-button: #5b1865; /* Deep purple for buttons */
+  --accent-button-hover: #4a1252;
+  --chat-header: #b7ffd8; /* Aquamarine for chat header */
   --surface: #ffffff;
   --surface-hover: #f8f9fa;
 
@@ -26,10 +27,10 @@
   --foreground-secondary: #95a3b3;
   --foreground-muted: #9ca3af; /* Updated for WCAG AA compliance */
   --border: #374151;
-  --accent: #5eead4; /* Updated for WCAG AA compliance - bright for links/text */
-  --accent-hover: #99f6e4;
-  --accent-button: #0f766e; /* Button background - darker for white text contrast */
-  --accent-button-hover: #14b8a6;
+  --accent: #67e8f9; /* Bright cyan-teal for links/text with blue shift */
+  --accent-hover: #a5f3fc;
+  --accent-button: #0f7080; /* Button background with subtle blue shift */
+  --accent-button-hover: #158fa3;
   --surface: #2a2a2a;
   --surface-hover: #333333;
 }

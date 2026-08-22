@@ -42,16 +42,17 @@ function checkCompliance(ratio) {
   };
 }
 
-// Idea 1: Modern Professional - Light Mode (UPDATED FOR WCAG AA)
+// Purple/Mint Experiment - Light Mode
 const lightMode = {
   background: '#ffffff',
   backgroundSecondary: '#f8f9fa',
   foreground: '#222222',
   foregroundSecondary: '#4b4e6d',
-  foregroundMuted: '#6b7280', // Updated from #95a3b3
+  foregroundMuted: '#6b7280',
   border: '#e5e7eb',
-  accent: '#0f766e', // Updated from #0d9488
-  accentHover: '#115e59', // Updated from #0f766e
+  accent: '#9984d4', // Soft periwinkle for focus rings
+  accentButton: '#5b1865', // Deep purple for buttons
+  chatHeader: '#b7ffd8', // Aquamarine for chat header
   surface: '#ffffff',
   surfaceHover: '#f8f9fa'
 };
@@ -64,15 +65,15 @@ const darkMode = {
   foregroundSecondary: '#95a3b3',
   foregroundMuted: '#9ca3af', // Updated from #6b7280
   border: '#374151',
-  accent: '#5eead4', // Updated - bright for links/text
-  accentButton: '#0f766e', // Dark for button backgrounds
-  accentHover: '#99f6e4',
+  accent: '#67e8f9', // Bright cyan-teal for links/text with blue shift
+  accentButton: '#0f7080', // Button background with subtle blue shift
+  accentHover: '#a5f3fc',
   surface: '#2a2a2a',
   surfaceHover: '#333333'
 };
 
 console.log('═══════════════════════════════════════════════════════════');
-console.log('  WCAG CONTRAST RATIO ANALYSIS - Idea 1: Modern Professional');
+console.log('  WCAG CONTRAST RATIO ANALYSIS - Purple/Mint Experiment');
 console.log('═══════════════════════════════════════════════════════════\n');
 
 console.log('📋 LIGHT MODE\n');
@@ -99,16 +100,23 @@ console.log(`  Contrast Ratio: ${ratio.toFixed(2)}:1`);
 Object.entries(checkCompliance(ratio)).forEach(([key, val]) => console.log(`  ${key}: ${val}`));
 console.log('');
 
-// Light Mode: Accent button (white text on accent)
-ratio = getContrastRatio('#ffffff', lightMode.accent);
-console.log(`Button Text (white) on Accent (#0f766e)`);
+// Light Mode: Purple button (white text on deep purple)
+ratio = getContrastRatio('#ffffff', lightMode.accentButton);
+console.log(`Button Text (white) on Deep Purple (#5b1865)`);
 console.log(`  Contrast Ratio: ${ratio.toFixed(2)}:1`);
 Object.entries(checkCompliance(ratio)).forEach(([key, val]) => console.log(`  ${key}: ${val}`));
 console.log('');
 
-// Light Mode: Accent text on background
+// Light Mode: Chat header (dark text on aquamarine)
+ratio = getContrastRatio(lightMode.foreground, lightMode.chatHeader);
+console.log(`Chat Header Text (#222222) on Aquamarine (#b7ffd8)`);
+console.log(`  Contrast Ratio: ${ratio.toFixed(2)}:1`);
+Object.entries(checkCompliance(ratio)).forEach(([key, val]) => console.log(`  ${key}: ${val}`));
+console.log('');
+
+// Light Mode: Focus ring (periwinkle)
 ratio = getContrastRatio(lightMode.accent, lightMode.background);
-console.log(`Accent Text/Links (#0f766e) on Background (#ffffff)`);
+console.log(`Focus Ring Periwinkle (#9984d4) on Background (#ffffff)`);
 console.log(`  Contrast Ratio: ${ratio.toFixed(2)}:1`);
 Object.entries(checkCompliance(ratio)).forEach(([key, val]) => console.log(`  ${key}: ${val}`));
 console.log('');
@@ -139,14 +147,14 @@ console.log('');
 
 // Dark Mode: Accent button (white text on accent button)
 ratio = getContrastRatio('#ffffff', darkMode.accentButton);
-console.log(`Button Text (white) on Accent Button (#0f766e)`);
+console.log(`Button Text (white) on Accent Button (#0f7080)`);
 console.log(`  Contrast Ratio: ${ratio.toFixed(2)}:1`);
 Object.entries(checkCompliance(ratio)).forEach(([key, val]) => console.log(`  ${key}: ${val}`));
 console.log('');
 
 // Dark Mode: Accent text/links on background
 ratio = getContrastRatio(darkMode.accent, darkMode.background);
-console.log(`Accent Text/Links (#5eead4) on Background (#222222)`);
+console.log(`Accent Text/Links (#67e8f9) on Background (#222222)`);
 console.log(`  Contrast Ratio: ${ratio.toFixed(2)}:1`);
 Object.entries(checkCompliance(ratio)).forEach(([key, val]) => console.log(`  ${key}: ${val}`));
 console.log('');
