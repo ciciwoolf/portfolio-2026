@@ -22,8 +22,8 @@ export default function ChatMessage({ role, content }: ChatMessageProps) {
       <div
         className={`max-w-[80%] rounded-lg px-4 py-3 ${
           isUser
-            ? 'bg-blue-600 text-white'
-            : 'bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100'
+            ? 'bg-[var(--accent-button)] text-white'
+            : 'bg-[var(--surface-hover)] text-[var(--foreground)]'
         }`}
       >
         {isUser ? (
@@ -31,7 +31,7 @@ export default function ChatMessage({ role, content }: ChatMessageProps) {
           <p className="text-sm whitespace-pre-wrap break-words">{content}</p>
         ) : (
           // Assistant messages: markdown rendering
-          <div className="prose prose-sm max-w-none dark:prose-invert prose-p:my-2 prose-ul:my-2 prose-ol:my-2">
+          <div className="prose prose-sm max-w-none dark:prose-invert prose-p:my-2 prose-ul:my-2 prose-ol:my-2 prose-a:text-[var(--accent)] prose-a:no-underline hover:prose-a:text-[var(--accent-hover)]">
             <ReactMarkdown>{content}</ReactMarkdown>
           </div>
         )}

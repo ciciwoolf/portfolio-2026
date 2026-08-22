@@ -57,39 +57,37 @@ export default function ChatInput({ onSend, disabled }: ChatInputProps) {
   };
 
   return (
-    <div className="border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-4">
-      <div className="flex gap-2 items-end">
-        <div className="flex-1">
-          <label htmlFor="chat-input" className="sr-only">
-            Type your message
-          </label>
-          <textarea
-            ref={textareaRef}
-            id="chat-input"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            onKeyDown={handleKeyDown}
-            disabled={disabled}
-            placeholder={disabled ? siteConfig.chat.inputPlaceholderDisabled : siteConfig.chat.inputPlaceholder}
-            rows={1}
-            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
-            style={{ minHeight: '44px', maxHeight: '200px' }}
-            aria-label="Chat message input"
-          />
-        </div>
+    <div className="border-t border-[var(--border)] bg-[var(--surface)] p-4">
+      <div className="flex gap-2 items-center">
+        <label htmlFor="chat-input" className="sr-only">
+          Type your message
+        </label>
+        <textarea
+          ref={textareaRef}
+          id="chat-input"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          onKeyDown={handleKeyDown}
+          disabled={disabled}
+          placeholder={disabled ? siteConfig.chat.inputPlaceholderDisabled : siteConfig.chat.inputPlaceholder}
+          rows={1}
+          className="flex-1 px-4 py-2.5 bg-[var(--background-secondary)] text-[var(--foreground)] border border-[var(--border)] rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-[var(--accent)] disabled:opacity-50 disabled:cursor-not-allowed placeholder:text-[var(--foreground-muted)] overflow-hidden"
+          style={{ minHeight: '44px', maxHeight: '200px' }}
+          aria-label="Chat message input"
+        />
 
         <button
           onClick={handleSend}
           disabled={disabled || !message.trim()}
-          className="px-6 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-          style={{ minHeight: '44px' }}
+          className="px-6 py-2.5 bg-[var(--accent-button)] text-white rounded-lg font-medium hover:bg-[var(--accent-button-hover)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors shrink-0"
+          style={{ height: '44px' }}
           aria-label="Send message"
         >
           {siteConfig.chat.sendButtonText}
         </button>
       </div>
 
-      <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
+      <p className="text-xs text-[var(--foreground-muted)] mt-2">
         {siteConfig.chat.keyboardHint}
       </p>
     </div>

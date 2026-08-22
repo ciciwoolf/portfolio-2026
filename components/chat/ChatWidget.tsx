@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ChatWindow from './ChatWindow';
+import siteConfig from '@/content/site-config.json';
 
 /**
  * ChatWidget component provides a floating chat interface
@@ -31,14 +32,14 @@ export default function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="fixed bottom-24 right-4 md:right-8 z-50 w-[calc(100vw-2rem)] md:w-[400px] h-[calc(100vh-8rem)] md:h-[600px] bg-white dark:bg-gray-900 rounded-lg shadow-2xl border border-gray-200 dark:border-gray-700 flex flex-col overflow-hidden"
+            className="fixed bottom-24 right-4 md:right-8 z-50 w-[calc(100vw-2rem)] md:w-[400px] h-[65vh] md:h-[600px] bg-[var(--background)] rounded-lg shadow-2xl border border-[var(--border)] flex flex-col overflow-hidden"
           >
             {/* Header */}
-            <div className="bg-blue-600 text-white px-4 py-3 flex justify-between items-center">
-              <h3 className="font-semibold">Chat with AI Assistant</h3>
+            <div className="bg-[var(--accent-button)] text-white px-4 py-3 flex justify-between items-center">
+              <h3 className="font-semibold">{siteConfig.chat.headerTitle}</h3>
               <button
                 onClick={toggleChat}
-                className="text-white hover:bg-blue-700 rounded p-1 transition-colors"
+                className="text-white hover:bg-[var(--accent-button-hover)] rounded p-1 transition-colors"
                 aria-label="Close chat"
               >
                 <svg
@@ -69,7 +70,7 @@ export default function ChatWidget() {
       {/* Toggle Button */}
       <motion.button
         onClick={toggleChat}
-        className="fixed bottom-4 right-4 md:right-8 z-50 bg-blue-600 text-white rounded-full p-4 shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+        className="fixed bottom-4 right-4 md:right-8 z-50 bg-[var(--accent-button)] text-white rounded-full p-4 shadow-lg hover:bg-[var(--accent-button-hover)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2 transition-colors"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         aria-label={isOpen ? 'Close chat' : 'Open chat'}
