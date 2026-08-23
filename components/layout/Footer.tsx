@@ -10,12 +10,7 @@ export default function Footer() {
   return (
     <footer className="bg-background border-t border-border py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          {/* Copyright */}
-          <p className="text-sm text-foreground-muted">
-            &copy; {currentYear} {siteConfig.personal.name}. {siteConfig.footer.copyright}
-          </p>
-
+        <div className="flex flex-col items-center justify-center gap-4">
           {/* Social Links & Theme Toggle */}
           <div className="flex items-center space-x-6">
             {siteConfig.social.linkedin && (
@@ -92,6 +87,11 @@ export default function Footer() {
               )}
             </button>
           </div>
+
+          {/* Copyright */}
+          <p className="text-sm text-foreground-muted">
+            &copy; {currentYear} {siteConfig.personal.name}. {siteConfig.footer.copyright}
+          </p>
         </div>
       </div>
     </footer>

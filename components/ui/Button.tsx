@@ -18,7 +18,7 @@ export default function Button({
 
   const variantStyles = {
     primary:
-      'bg-accent-button text-white hover:bg-accent-button-hover focus:ring-accent',
+      'bg-accent-button text-[var(--foreground-on-accent)] hover:bg-accent-button-hover focus:ring-accent',
     secondary:
       'bg-surface text-foreground hover:bg-surface-hover focus:ring-accent border border-border',
     outline:

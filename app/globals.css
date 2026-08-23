@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   /* Light theme - Purple/Mint Experiment */
@@ -7,6 +7,7 @@
   --foreground: #222222;
   --foreground-secondary: #4b4e6d;
   --foreground-muted: #6b7280;
+  --foreground-on-accent: #ffffff; /* White text for deep purple buttons */
   --border: #e5e7eb;
   --accent: #9984d4; /* Soft periwinkle for focus rings */
   --accent-hover: #7d68b8;
@@ -20,19 +21,21 @@
 }
 
 .dark {
-  /* Dark theme - Idea 1: Modern Professional */
-  --background: #222222;
-  --background-secondary: #2a2a2a;
-  --foreground: #ffffff;
-  --foreground-secondary: #95a3b3;
-  --foreground-muted: #9ca3af; /* Updated for WCAG AA compliance */
-  --border: #374151;
-  --accent: #67e8f9; /* Bright cyan-teal for links/text with blue shift */
-  --accent-hover: #a5f3fc;
-  --accent-button: #0f7080; /* Button background with subtle blue shift */
-  --accent-button-hover: #158fa3;
-  --surface: #2a2a2a;
-  --surface-hover: #333333;
+  /* Dark theme - Deep Purple background with clean text */
+  --background: #1a0d1f;
+  --background-secondary: #251433;
+  --foreground: #ffffff; /* Clean white text */
+  --foreground-secondary: #d1d5db; /* Light gray */
+  --foreground-muted: #9ca3af; /* Muted gray */
+  --foreground-on-accent: #0f172a; /* Dark text for light blue buttons/headers */
+  --border: #3d2952;
+  --accent: #67e8f9; /* Light blue/cyan for links and focus rings */
+  --accent-hover: #22d3ee;
+  --accent-button: #67e8f9; /* Light blue for buttons (matching accent) */
+  --accent-button-hover: #22d3ee;
+  --chat-header: #67e8f9; /* Light blue for chat header */
+  --surface: #251433;
+  --surface-hover: #2d1a3d;
 }
 
 @theme inline {

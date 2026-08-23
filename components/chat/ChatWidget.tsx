@@ -32,14 +32,14 @@ export default function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="fixed bottom-24 right-4 md:right-8 z-50 w-[calc(100vw-2rem)] md:w-[400px] h-[65vh] md:h-[600px] bg-[var(--background)] rounded-lg shadow-2xl border border-[var(--border)] flex flex-col overflow-hidden"
+            className="fixed bottom-24 right-4 md:right-8 z-50 w-[calc(100vw-2rem)] md:w-[400px] h-[65vh] md:h-[80vh] max-h-[calc(100vh-8rem)] bg-[var(--background)] rounded-lg shadow-2xl border border-[var(--border)] flex flex-col overflow-hidden"
           >
             {/* Header */}
-            <div className="bg-[var(--chat-header)] text-[var(--foreground)] px-4 py-3 flex justify-between items-center">
+            <div className="bg-[var(--chat-header)] text-slate-900 px-4 py-3 flex justify-between items-center">
               <h3 className="font-semibold">{siteConfig.chat.headerTitle}</h3>
               <button
                 onClick={toggleChat}
-                className="text-[var(--foreground)] hover:opacity-70 rounded p-1 transition-opacity"
+                className="hover:opacity-70 rounded p-1 transition-opacity"
                 aria-label="Close chat"
               >
                 <svg
@@ -70,7 +70,7 @@ export default function ChatWidget() {
       {/* Toggle Button */}
       <motion.button
         onClick={toggleChat}
-        className="fixed bottom-4 right-4 md:right-8 z-50 bg-[var(--chat-header)] text-[var(--foreground)] rounded-full p-4 shadow-lg hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2 transition-opacity"
+        className="fixed bottom-4 right-4 md:right-8 z-50 bg-[var(--accent-button)] text-[var(--foreground-on-accent)] rounded-full p-4 shadow-lg hover:bg-[var(--accent-button-hover)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2 transition-colors"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         aria-label={isOpen ? 'Close chat' : 'Open chat'}

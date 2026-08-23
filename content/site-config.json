@@ -34,7 +34,7 @@
     "copyright": "All rights reserved."
   },
   "chat": {
-    "headerTitle": "GPT-3-turbo AI Bot",
+    "headerTitle": "gpt-3.5-turbo AI Bot",
     "welcomeHeading": "Hi! Ask me anything about Christine",
     "welcomeSubtext": "Try asking about her experience, skills, or projects!",
     "inputPlaceholder": "Ask me about Christine...",

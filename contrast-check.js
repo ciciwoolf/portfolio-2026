@@ -57,19 +57,19 @@ const lightMode = {
   surfaceHover: '#f8f9fa'
 };
 
-// Idea 1: Modern Professional - Dark Mode (UPDATED FOR WCAG AA)
+// Deep Purple Background - Dark Mode
 const darkMode = {
-  background: '#222222',
-  backgroundSecondary: '#2a2a2a',
+  background: '#1a0d1f',
+  backgroundSecondary: '#251433',
   foreground: '#ffffff',
-  foregroundSecondary: '#95a3b3',
-  foregroundMuted: '#9ca3af', // Updated from #6b7280
-  border: '#374151',
-  accent: '#67e8f9', // Bright cyan-teal for links/text with blue shift
-  accentButton: '#0f7080', // Button background with subtle blue shift
-  accentHover: '#a5f3fc',
-  surface: '#2a2a2a',
-  surfaceHover: '#333333'
+  foregroundSecondary: '#d1d5db',
+  foregroundMuted: '#9ca3af',
+  border: '#3d2952',
+  accent: '#67e8f9', // Light blue/cyan for links and focus rings
+  accentButton: '#67e8f9', // Light blue for buttons
+  chatHeader: '#67e8f9', // Light blue for chat header
+  surface: '#251433',
+  surfaceHover: '#2d1a3d'
 };
 
 console.log('═══════════════════════════════════════════════════════════');
@@ -121,7 +121,35 @@ console.log(`  Contrast Ratio: ${ratio.toFixed(2)}:1`);
 Object.entries(checkCompliance(ratio)).forEach(([key, val]) => console.log(`  ${key}: ${val}`));
 console.log('');
 
-console.log('\n📋 DARK MODE\n');
+// Light Mode: Welcome message in chat (muted text on background)
+ratio = getContrastRatio(lightMode.foregroundMuted, lightMode.background);
+console.log(`Chat Welcome Message (#6b7280) on Background (#ffffff)`);
+console.log(`  Contrast Ratio: ${ratio.toFixed(2)}:1`);
+Object.entries(checkCompliance(ratio)).forEach(([key, val]) => console.log(`  ${key}: ${val}`));
+console.log('');
+
+console.log('\n📋 DARK MODE - Testing Darker Blue Shades\n');
+console.log('───────────────────────────────────────────────────────────');
+
+// Test various darker cyan/blue shades with white text
+const blueShades = [
+  { name: 'Current Light Blue', hex: '#67e8f9' },
+  { name: 'Option 1 - Just Passing AA', hex: '#0771a3' },
+  { name: 'Option 2 - Safe AA', hex: '#06608b' },
+  { name: 'Option 3 - Strong AA', hex: '#055173' },
+  { name: 'Option 4 - AAA Level', hex: '#04415c' },
+  { name: 'Option 5 - Deep Teal', hex: '#033244' }
+];
+
+blueShades.forEach(shade => {
+  ratio = getContrastRatio('#ffffff', shade.hex);
+  console.log(`${shade.name} (${shade.hex})`);
+  console.log(`  White text contrast: ${ratio.toFixed(2)}:1`);
+  Object.entries(checkCompliance(ratio)).forEach(([key, val]) => console.log(`  ${key}: ${val}`));
+  console.log('');
+});
+
+console.log('\n📋 DARK MODE - Current Setup\n');
 console.log('───────────────────────────────────────────────────────────');
 
 // Dark Mode: Main text on background
@@ -145,16 +173,30 @@ console.log(`  Contrast Ratio: ${ratio.toFixed(2)}:1`);
 Object.entries(checkCompliance(ratio)).forEach(([key, val]) => console.log(`  ${key}: ${val}`));
 console.log('');
 
-// Dark Mode: Accent button (white text on accent button)
-ratio = getContrastRatio('#ffffff', darkMode.accentButton);
-console.log(`Button Text (white) on Accent Button (#0f7080)`);
+// Dark Mode: Button (dark text on light blue)
+ratio = getContrastRatio('#0f172a', darkMode.accentButton);
+console.log(`Button Text (#0f172a) on Light Blue (#67e8f9)`);
 console.log(`  Contrast Ratio: ${ratio.toFixed(2)}:1`);
 Object.entries(checkCompliance(ratio)).forEach(([key, val]) => console.log(`  ${key}: ${val}`));
 console.log('');
 
-// Dark Mode: Accent text/links on background
+// Dark Mode: Chat header (dark text on light blue)
+ratio = getContrastRatio('#0f172a', darkMode.chatHeader);
+console.log(`Chat Header Text (#0f172a) on Light Blue (#67e8f9)`);
+console.log(`  Contrast Ratio: ${ratio.toFixed(2)}:1`);
+Object.entries(checkCompliance(ratio)).forEach(([key, val]) => console.log(`  ${key}: ${val}`));
+console.log('');
+
+// Dark Mode: Accent text/links on purple background
 ratio = getContrastRatio(darkMode.accent, darkMode.background);
-console.log(`Accent Text/Links (#67e8f9) on Background (#222222)`);
+console.log(`Accent Text/Links (#67e8f9) on Purple Background (#1a0d1f)`);
+console.log(`  Contrast Ratio: ${ratio.toFixed(2)}:1`);
+Object.entries(checkCompliance(ratio)).forEach(([key, val]) => console.log(`  ${key}: ${val}`));
+console.log('');
+
+// Dark Mode: Welcome message in chat (muted text on background)
+ratio = getContrastRatio(darkMode.foregroundMuted, darkMode.background);
+console.log(`Chat Welcome Message (#9ca3af) on Purple Background (#1a0d1f)`);
 console.log(`  Contrast Ratio: ${ratio.toFixed(2)}:1`);
 Object.entries(checkCompliance(ratio)).forEach(([key, val]) => console.log(`  ${key}: ${val}`));
 console.log('');

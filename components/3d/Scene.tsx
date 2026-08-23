@@ -2,12 +2,16 @@
 
 import { Canvas } from '@react-three/fiber'
 import { PerspectiveCamera, OrbitControls } from '@react-three/drei'
+import { EffectComposer, Bloom } from '@react-three/postprocessing'
 import { Suspense, useState, useEffect } from 'react'
 import Model from './Model'
 import Lights from './Lights'
+import Particles from './Particles'
+import { useTheme } from '../theme/ThemeProvider'
 
 export default function Scene() {
   const [isMobile, setIsMobile] = useState(false)
+  const { theme } = useTheme()
 
   useEffect(() => {
     const checkMobile = () => {
@@ -33,11 +37,22 @@ export default function Scene() {
         maxDistance={20}
       />
       <Suspense fallback={null}>
+        <group position={[0, 0, -10]}>
+          <Particles count={isMobile ? 30 : 80} />
+        </group>
         <group scale={isMobile ? 0.7 : 1}>
           <Model />
           <Lights />
         </group>
       </Suspense>
+      <EffectComposer>
+        <Bloom
+          intensity={theme === 'dark' ? 1.5 : 0.8}
+          luminanceThreshold={theme === 'dark' ? 0.2 : 0.4}
+          luminanceSmoothing={0.9}
+          radius={theme === 'dark' ? 0.8 : 0.6}
+        />
+      </EffectComposer>
     </Canvas>
   )
 }
