@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import siteConfig from '@/content/site-config.json'
 
 export default function Navigation() {
@@ -37,8 +38,15 @@ export default function Navigation() {
           {/* Brand */}
           <Link
             href="/"
-            className="text-xl font-bold text-foreground hover:text-accent transition-colors"
+            className="flex items-center gap-2 text-xl font-bold text-foreground hover:text-accent transition-colors"
           >
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={32}
+              height={32}
+              className="rounded-sm"
+            />
             {siteConfig.navigation.brandName}
           </Link>
 
