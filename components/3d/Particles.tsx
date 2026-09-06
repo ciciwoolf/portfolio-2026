@@ -105,17 +105,24 @@ export default function Particles({
 
   useFrame((state) => {
     if (!mesh.current) return
+    if (!mesh.current.geometry.attributes.position) return
+
     const positions = mesh.current.geometry.attributes.position.array as Float32Array
-    const colors = mesh.current.geometry.attributes.color?.array as Float32Array
+    const colors = mesh.current.geometry.attributes.color?.array as Float32Array | undefined
 
     const time = state.clock.elapsedTime
     const rng = seededRandom(Math.floor(time * 1000)) // Time-based seed for respawning
 
     for (let i = 0; i < maxCount; i++) {
+      const particle = particles[i]
+      if (!particle) continue
+
       if (i < count) {
         // Only animate active particles
-        let y = positions[i * 3 + 1]
-        y -= particles[i].speed
+        const currentY = positions[i * 3 + 1]
+        if (currentY === undefined) continue
+        let y = currentY
+        y -= particle.speed
 
         // Respawn at top when particle falls below viewport
         if (y < -5) {
@@ -129,7 +136,7 @@ export default function Particles({
 
         // Twinkle effect: vary brightness using vertex colors
         if (colors) {
-          const twinkle = Math.sin(time * particles[i].twinkleSpeed + particles[i].twinkleOffset)
+          const twinkle = Math.sin(time * particle.twinkleSpeed + particle.twinkleOffset)
           const normalizedTwinkle = (twinkle + 1) / 2 // Convert from -1,1 to 0,1
           // Brightness varies between 0.4 and 1.0
           const brightness = 0.4 + normalizedTwinkle * 0.6
@@ -152,7 +159,9 @@ export default function Particles({
       }
     }
     mesh.current.geometry.attributes.position.needsUpdate = true
-    if (colors) mesh.current.geometry.attributes.color.needsUpdate = true
+    if (colors && mesh.current.geometry.attributes.color) {
+      mesh.current.geometry.attributes.color.needsUpdate = true
+    }
   })
 
   // Always create buffer with maxCount size
@@ -184,16 +193,18 @@ export default function Particles({
     <points ref={mesh}>
       <bufferGeometry>
         <bufferAttribute
-          attach="attributes-position"
+          attach="attributes.position"
           count={maxCount}
           array={positions}
           itemSize={3}
+          args={[positions, 3]}
         />
         <bufferAttribute
-          attach="attributes-color"
+          attach="attributes.color"
           count={maxCount}
           array={colors}
           itemSize={3}
+          args={[colors, 3]}
         />
       </bufferGeometry>
       <pointsMaterial
