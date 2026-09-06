@@ -1,0 +1,69 @@
+[
+  {
+    "id": "1",
+    "company": "Capillary Technologies",
+    "role": "Senior Software Engineer",
+    "duration": "Sep 2025 - Present",
+    "type": "Healthcare Rewards Platform",
+    "current": true,
+    "description": "Own authorization framework across web and mobile, built identity resolution layer end to end, and handle webhook integrations bringing fitness and health data into the product.",
+    "highlights": [
+      "Won 1st place of 20 teams in company-wide AI hackathon as sole engineer on three-person team",
+      "Built internal QA tool that reduced multi-minute manual process to one-click automation",
+      "Implemented Web Vitals monitoring dashboard and bundle analysis for production visibility",
+      "Owned complex rewards eligibility feature end-to-end within first three months (multi-sprint, hard deadline)",
+      "Cut delivery time by ~30% on tickets using AI-assisted development practices",
+      "Established platform's deployment and release model with declarative processes and automated sync checks"
+    ],
+    "skills": [
+      "React",
+      "React Native",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Auth0",
+      "GraphQL",
+      "Webhook Integration",
+      "Identity Resolution",
+      "Authorization",
+      "New Relic"
+    ]
+  },
+  {
+    "id": "2",
+    "company": "Science Museum of Minnesota",
+    "role": "Full Stack Developer",
+    "duration": "Jan 2025 - Aug 2025",
+    "type": "Interactive Museum Applications",
+    "current": false,
+    "description": "Developed museum experiences through React applications and interactive touchscreen exhibits. Designed and developed responsive web applications using React.js, Node.js TypeScript, and Gatsby.js, ensuring optimal performance across desktop, mobile, and museum kiosk environments. Led Next.js application development using App Router architecture.",
+    "skills": [
+      "React",
+      "Next.js",
+      "Gatsby.js",
+      "Node.js",
+      "TypeScript",
+      "GraphQL"
+    ]
+  },
+  {
+    "id": "3",
+    "company": "TSI Incorporated",
+    "role": "Full Stack Software Engineer",
+    "duration": "Jul 2022 - Dec 2024",
+    "type": "IoT Data Platform",
+    "current": false,
+    "description": "Built Vue.js/TypeScript Excel Add-in connecting to MongoDB and Google Cloud, enabling data import and analysis workflows for air quality technicians. Developed cloud-based subscription platform using Vue.js, TypeScript, and Node.js. Engineered backend microservices with GoLang and JavaScript, optimizing subscription management and API performance.",
+    "skills": [
+      "Vue.js",
+      "GoLang",
+      "Node.js",
+      "MongoDB",
+      "Firestore",
+      "TypeScript",
+      "Jest",
+      "Cypress",
+      "Auth0"
+    ]
+  }
+]

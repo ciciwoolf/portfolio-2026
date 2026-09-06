@@ -1,10 +1,12 @@
-import Section from '@/components/ui/Section'
-import Card from '@/components/ui/Card'
-import { Project } from '@/lib/types'
-import projectsData from '@/content/projects.json'
+import Section from '@/components/ui/Section';
+import Card from '@/components/ui/Card';
+import Image from 'next/image';
+import ArtVideo from '@/components/ui/ArtVideo';
+import { Project } from '@/lib/types';
+import projectsData from '@/content/projects.json';
 
 export default function Projects() {
-  const projects: Project[] = projectsData
+  const projects: Project[] = projectsData;
 
   return (
     <Section id="work" className="py-20 bg-background-secondary">
@@ -17,9 +19,22 @@ export default function Projects() {
           {projects.map((project) => (
             <Card key={project.id}>
               <div className="space-y-4">
-                {/* Project Image Placeholder */}
-                <div className="w-full h-48 bg-gradient-to-br from-surface to-surface-hover rounded-lg flex items-center justify-center border border-border">
-                  <p className="text-foreground-muted">Project Image</p>
+                {/* Project Image or Video */}
+                <div className="w-full h-64 bg-gradient-to-br from-surface to-surface-hover rounded-lg overflow-hidden border border-border relative">
+                  {project.video ? (
+                    <ArtVideo
+                      publicId={project.video.publicId}
+                      cloudName={project.video.cloudName}
+                    />
+                  ) : project.image ? (
+                    <Image
+                      src={project.image}
+                      alt={project.name}
+                      fill
+                      className="object-cover"
+                      unoptimized={project.image.includes('cloudinary')}
+                    />
+                  ) : null}
                 </div>
 
                 {/* Project Info */}
@@ -52,7 +67,7 @@ export default function Projects() {
                       rel="noopener noreferrer"
                       className="text-accent hover:text-accent-hover hover:underline font-medium transition-colors"
                     >
-                      Live Demo →
+                      Visit Site →
                     </a>
                   )}
                   {project.githubUrl && (
@@ -72,5 +87,5 @@ export default function Projects() {
         </div>
       </div>
     </Section>
-  )
+  );
 }

@@ -1,20 +1,23 @@
 [
   {
     "id": "1",
-    "name": "Violet River",
-    "description": "A modern web application showcasing creative digital experiences with interactive UI components and smooth animations.",
-    "image": "/images/violet-river.jpg",
-    "tags": ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    "liveUrl": "https://violet-river.example.com",
-    "githubUrl": "https://github.com/yourusername/violet-river"
+    "name": "The Art of Cici Woolf",
+    "description": "An app to display my artwork, built with Next.js, React.js, and Tailwind CSS.",
+    "image": "https://res.cloudinary.com/dmezw1zxr/image/upload/f_auto,q_auto,w_800/v1750430107/Screenshot_2025-06-19_at_11.12.03_AM_akcbnm.png",
+    "tags": ["Next.js", "React", "Tailwind CSS"],
+    "liveUrl": "https://www.theartofciciwoolf.com",
+    "githubUrl": ""
   },
   {
     "id": "2",
-    "name": "SpiderWeb.js",
-    "description": "An innovative JavaScript library for creating interactive network visualizations and graph-based interfaces.",
-    "image": "/images/spiderweb.jpg",
-    "tags": ["JavaScript", "D3.js", "Canvas API", "WebGL"],
-    "liveUrl": "https://spiderweb-js.example.com",
-    "githubUrl": "https://github.com/yourusername/spiderweb-js"
+    "name": "JavaScript Art",
+    "description": "Interactive code art featuring moving visual patterns created with vanilla JavaScript.",
+    "tags": ["JavaScript", "Canvas API", "Generative Art"],
+    "liveUrl": "",
+    "githubUrl": "https://github.com/ciciwoolf/javascript-art",
+    "video": {
+      "publicId": "violetRiver_dqkufw",
+      "cloudName": "dmezw1zxr"
+    }
   }
 ]

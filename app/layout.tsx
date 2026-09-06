@@ -1,13 +1,26 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Nunito, Alegreya, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import siteConfig from "@/content/site-config.json";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import ChatWidgetWrapper from "@/components/chat/ChatWidgetWrapper";
 
-const inter = Inter({
+const nunito = Nunito({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-nunito",
+  display: "swap",
+});
+
+const alegreya = Alegreya({
+  subsets: ["latin"],
+  variable: "--font-alegreya",
+  display: "swap",
+  weight: ["400", "700", "900"],
+});
+
+const sourceSans = Source_Sans_3({
+  subsets: ["latin"],
+  variable: "--font-source-sans",
   display: "swap",
 });
 
@@ -33,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable} suppressHydrationWarning>
+    <html lang="en" className={`${nunito.variable} ${alegreya.variable} ${sourceSans.variable}`} suppressHydrationWarning>
       <body className="min-h-screen bg-[var(--background)] text-[var(--foreground)] antialiased">
         <ThemeProvider>
           {children}

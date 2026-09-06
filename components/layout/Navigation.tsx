@@ -4,10 +4,12 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import siteConfig from '@/content/site-config.json'
+import { useTheme } from '@/components/theme/ThemeProvider'
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { theme, toggleTheme } = useTheme()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,9 +23,21 @@ export default function Navigation() {
   const navLinks = [
     { href: '#work', label: 'Work' },
     { href: '#skills', label: 'Skills' },
-    { href: '/blog', label: 'Blog' },
-    { href: '#resume', label: 'Resume' },
+    { href: 'https://www.linkedin.com/in/christinewoolf/', label: 'LinkedIn' },
+    // { href: '/blog', label: 'Blog' }, // Hidden for now
   ]
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Only handle hash links for smooth scrolling
+    if (href.startsWith('#')) {
+      e.preventDefault()
+      const element = document.querySelector(href)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        setMobileMenuOpen(false)
+      }
+    }
+  }
 
   return (
     <nav
@@ -56,11 +70,35 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="text-sm font-medium text-foreground-secondary hover:text-accent transition-colors"
+                {...(link.href.startsWith('http') && {
+                  target: '_blank',
+                  rel: 'noopener noreferrer'
+                })}
               >
                 {link.label}
               </Link>
             ))}
+
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-md text-foreground-secondary hover:text-accent hover:bg-surface transition-colors"
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            >
+              {theme === 'dark' ? (
+                // Sun icon for light mode
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              ) : (
+                // Moon icon for dark mode
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+              )}
+            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -98,11 +136,37 @@ export default function Navigation() {
                 key={link.href}
                 href={link.href}
                 className="block px-3 py-2 rounded-md text-base font-medium text-foreground-secondary hover:bg-surface hover:text-accent transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, link.href)}
+                {...(link.href.startsWith('http') && {
+                  target: '_blank',
+                  rel: 'noopener noreferrer'
+                })}
               >
                 {link.label}
               </Link>
             ))}
+
+            {/* Mobile Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              className="w-full flex items-center gap-3 px-3 py-2 rounded-md text-base font-medium text-foreground-secondary hover:bg-surface hover:text-accent transition-colors"
+            >
+              {theme === 'dark' ? (
+                <>
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                  Light Mode
+                </>
+              ) : (
+                <>
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                  </svg>
+                  Dark Mode
+                </>
+              )}
+            </button>
           </div>
         </div>
       )}

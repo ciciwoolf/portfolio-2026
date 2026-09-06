@@ -12,21 +12,21 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('light')
+  const [theme, setTheme] = useState<Theme>('dark')
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true)
-    // Check localStorage first, then system preference
+    // Check localStorage first, then default to dark
     const stored = localStorage.getItem('theme') as Theme | null
     if (stored) {
       setTheme(stored)
       document.documentElement.classList.toggle('dark', stored === 'dark')
     } else {
-      const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-      const systemTheme = isDark ? 'dark' : 'light'
-      setTheme(systemTheme)
-      document.documentElement.classList.toggle('dark', isDark)
+      // Default to dark theme
+      setTheme('dark')
+      document.documentElement.classList.add('dark')
     }
   }, [])
 
@@ -53,7 +53,7 @@ export function useTheme() {
   const context = useContext(ThemeContext)
   if (context === undefined) {
     // Return default values for SSR
-    return { theme: 'light' as Theme, toggleTheme: () => {} }
+    return { theme: 'dark' as Theme, toggleTheme: () => {} }
   }
   return context
 }

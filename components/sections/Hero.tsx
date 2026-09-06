@@ -1,11 +1,10 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
-import dynamic from 'next/dynamic'
-import Button from '@/components/ui/Button'
-import siteConfig from '@/content/site-config.json'
+import { motion } from 'framer-motion';
+import dynamic from 'next/dynamic';
+import Button from '@/components/ui/Button';
+import siteConfig from '@/content/site-config.json';
 
-// Dynamic import for 3D Scene (will be created in Session 3)
 const Scene = dynamic(() => import('@/components/3d/Scene'), {
   ssr: false,
   loading: () => (
@@ -13,12 +12,12 @@ const Scene = dynamic(() => import('@/components/3d/Scene'), {
       <p className="text-foreground-muted">Loading 3D Scene...</p>
     </div>
   ),
-})
+});
 
 export default function Hero() {
   const scrollToWork = () => {
-    document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })
-  }
+    document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <section className="min-h-screen flex items-center bg-gradient-to-b from-background to-background-secondary pt-16">
@@ -30,7 +29,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="text-center lg:text-left"
+            className="text-center lg:text-left px-6 sm:px-0 lg:pl-12"
           >
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -39,7 +38,9 @@ export default function Hero() {
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground"
             >
               {siteConfig.hero.greeting}{' '}
-              <span className="text-accent">{siteConfig.personal.name}</span>
+              <span className="text-accent font-name">
+                {siteConfig.personal.name}
+              </span>
             </motion.h1>
 
             <motion.p
@@ -74,5 +75,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
