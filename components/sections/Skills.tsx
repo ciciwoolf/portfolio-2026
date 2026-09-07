@@ -7,14 +7,18 @@ import experienceData from '@/content/experience.json'
 
 export default function Skills() {
   const experiences: Experience[] = experienceData
-  const [expandedId, setExpandedId] = useState<string | null>(experiences[0]?.id || null)
+  const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set([experiences[0]?.id].filter(Boolean)))
 
   const handleToggle = (id: string) => {
-    setExpandedId(expandedId === id ? null : id)
-  }
-
-  const handleMouseEnter = (id: string) => {
-    setExpandedId(id)
+    setExpandedIds(prev => {
+      const newSet = new Set(prev)
+      if (newSet.has(id)) {
+        newSet.delete(id)
+      } else {
+        newSet.add(id)
+      }
+      return newSet
+    })
   }
 
   return (
@@ -29,13 +33,12 @@ export default function Skills() {
             <div
               key={exp.id}
               className="border border-border rounded-lg overflow-hidden transition-all duration-300 hover:border-accent"
-              onMouseEnter={() => handleMouseEnter(exp.id)}
             >
               {/* Header - Always Visible */}
               <button
                 onClick={() => handleToggle(exp.id)}
                 className="w-full px-6 py-4 flex items-center justify-between bg-surface hover:bg-surface-hover transition-colors text-left"
-                aria-expanded={expandedId === exp.id}
+                aria-expanded={expandedIds.has(exp.id)}
               >
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-1">
@@ -56,8 +59,8 @@ export default function Skills() {
 
                 {/* Chevron Icon */}
                 <svg
-                  className={`w-5 h-5 text-foreground-secondary transition-transform duration-300 ${
-                    expandedId === exp.id ? 'rotate-180' : ''
+                  className={`w-5 h-5 text-foreground-secondary transition-transform duration-500 ease-out ${
+                    expandedIds.has(exp.id) ? 'rotate-180' : ''
                   }`}
                   fill="none"
                   viewBox="0 0 24 24"
@@ -74,8 +77,8 @@ export default function Skills() {
 
               {/* Expandable Content */}
               <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  expandedId === exp.id ? 'max-h-[800px]' : 'max-h-0'
+                className={`overflow-hidden transition-all duration-500 ease-out ${
+                  expandedIds.has(exp.id) ? 'max-h-[800px]' : 'max-h-0'
                 }`}
               >
                 <div className="px-6 py-4 bg-background-secondary border-t border-border">

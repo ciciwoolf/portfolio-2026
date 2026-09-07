@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import Button from '@/components/ui/Button';
 import ModelAttribution from '@/components/ui/ModelAttribution';
 import siteConfig from '@/content/site-config.json';
+import { useTheme } from '@/components/theme/ThemeProvider';
 
 const Scene = dynamic(() => import('@/components/3d/Scene'), {
   ssr: false,
@@ -16,6 +17,7 @@ const Scene = dynamic(() => import('@/components/3d/Scene'), {
 });
 
 export default function Hero() {
+  const { theme } = useTheme();
   const scrollToWork = () => {
     document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -50,6 +52,13 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground"
+              style={
+                theme === 'light'
+                  ? {
+                      textShadow: '0 1px 0 rgba(255, 255, 255, 0.9), 0 2px 0 rgba(255, 255, 255, 0.7), 0 3px 0 rgba(255, 255, 255, 0.5), 0 4px 8px rgba(255, 255, 255, 0.3), 0 8px 16px rgba(255, 255, 255, 0.2)',
+                    }
+                  : undefined
+              }
             >
               {siteConfig.hero.greeting}{' '}
               <span className="text-accent font-name">
@@ -62,6 +71,13 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-lg sm:text-xl md:text-2xl text-foreground-secondary mb-8"
+              style={
+                theme === 'light'
+                  ? {
+                      textShadow: '0 1px 0 rgba(255, 255, 255, 0.8), 0 2px 0 rgba(255, 255, 255, 0.6), 0 3px 0 rgba(255, 255, 255, 0.4), 0 4px 6px rgba(255, 255, 255, 0.2), 0 6px 12px rgba(255, 255, 255, 0.15)',
+                    }
+                  : undefined
+              }
             >
               {siteConfig.hero.subtitle}
             </motion.p>
