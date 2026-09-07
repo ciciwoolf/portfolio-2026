@@ -189,7 +189,7 @@ export default function Particles({
 
   const colors = useMemo(() => {
     const col = new Float32Array(maxCount * 3);
-    particles.forEach((p, i) => {
+    particles.forEach((_, i) => {
       if (i < count) {
         // Initial brightness (1.0 = full brightness)
         col[i * 3] = 1.0; // R

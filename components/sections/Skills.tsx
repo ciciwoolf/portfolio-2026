@@ -7,7 +7,9 @@ import experienceData from '@/content/experience.json'
 
 export default function Skills() {
   const experiences: Experience[] = experienceData
-  const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set([experiences[0]?.id].filter(Boolean)))
+  const [expandedIds, setExpandedIds] = useState<Set<string>>(
+    new Set(experiences[0]?.id ? [experiences[0].id] : [])
+  )
 
   const handleToggle = (id: string) => {
     setExpandedIds(prev => {
