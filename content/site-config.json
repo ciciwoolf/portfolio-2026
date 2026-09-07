@@ -10,6 +10,9 @@
     "subtitle": "Full Stack Software Engineer crafting interactive digital experiences with modern technologies",
     "ctaText": "See My Work"
   },
+  "infoContent": {
+    "content": "Personalized using Blender&apos;s MCP server with Claude (cats, artwork, plants, flowers, and custom colors)."
+  },
   "navigation": {
     "brandName": "Portfolio"
   },

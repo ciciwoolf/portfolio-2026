@@ -15,19 +15,27 @@ export default function Scene() {
   const { theme } = useTheme();
 
   return (
-    <Canvas shadows>
+    <Canvas
+      shadows
+      style={{ background: 'transparent' }}
+      gl={{ alpha: true, antialias: true }}
+    >
       <PerspectiveCamera makeDefault position={[0, 0, 15]} fov={45} />
       <OrbitControls
-        enableZoom={false}
+        enableZoom={true}
         enablePan={false}
         enableRotate={viewport !== 'mobile'}
         autoRotate={true}
         autoRotateSpeed={0.5}
         minDistance={10}
         maxDistance={20}
+        touches={{
+          ONE: 0, // Disable one-finger touch rotation
+          TWO: 0, // Disable two-finger touch pan/zoom
+        }}
       />
       <Suspense fallback={null}>
-        <group position={[0, 0, -10]}>
+        <group position={viewport === 'mobile' ? [0, 0, 0] : [7, 0, 0]}>
           <Particles
             count={
               viewport === 'mobile'
@@ -43,21 +51,21 @@ export default function Scene() {
         <group
           scale={
             viewport === 'mobile'
-              ? 0.7
+              ? 0.69
               : viewport === 'tablet'
-                ? 0.85
+                ? 0.9
                 : viewport === 'laptop'
-                  ? 0.95
-                  : 1.15
+                  ? 1.0
+                  : 0.9
           }
           position={
             viewport === 'mobile'
-              ? [1, -0.5, 0]
+              ? [0, 1, 0]
               : viewport === 'tablet'
-                ? [0, -1, 0]
+                ? [6, -1, 0]
                 : viewport === 'laptop'
-                  ? [1.8, -0.3, 0]
-                  : [0, 0, 0]
+                  ? [8, -0.3, 0]
+                  : [7, 0, 0]
           }
         >
           <Model />
