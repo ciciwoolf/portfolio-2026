@@ -55,14 +55,14 @@ export default function Navigation() {
           {/* Brand */}
           <Link
             href="/"
-            className="flex items-center gap-2 text-sm font-bold text-foreground hover:text-accent transition-colors"
+            className="flex items-center gap-2 text-sm lg:text-base xl:text-lg font-bold text-foreground hover:text-accent transition-colors"
           >
             <Image
               src="/logo.png"
               alt="Logo"
               width={32}
               height={32}
-              className="rounded-sm"
+              className="rounded-sm lg:w-[35px] lg:h-[35px] xl:w-[37px] xl:h-[37px]"
             />
             {siteConfig.navigation.brandName}
           </Link>
@@ -74,7 +74,7 @@ export default function Navigation() {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-sm lg:text-base font-medium text-foreground-secondary hover:text-accent transition-colors"
+                className="text-sm lg:text-lg xl:text-xl font-medium text-foreground-secondary hover:text-accent transition-colors"
                 {...(link.href.startsWith('http') && {
                   target: '_blank',
                   rel: 'noopener noreferrer',

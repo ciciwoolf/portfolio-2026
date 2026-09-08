@@ -63,15 +63,15 @@ export default function Scene() {
                 : viewport === 'tablet'
                   ? 120
                   : viewport === 'laptop'
-                    ? 150
-                    : 180
+                    ? 140
+                    : 140
             }
           />
         </group>
         <group
           scale={
             viewport === 'mobile'
-              ? 0.69
+              ? 0.76
               : viewport === 'tablet'
                 ? 0.75
                 : viewport === 'laptop'
@@ -84,9 +84,10 @@ export default function Scene() {
               : viewport === 'tablet'
                 ? [6, -0.5, 0]
                 : viewport === 'laptop'
-                  ? [8, -0.15, 0]
-                  : [7, 0, 0]
+                  ? [4, -0.15, 0]
+                  : [4.5, 0, 0]
           }
+          rotation={[0, -Math.PI / 2, 0]}
         >
           <Model />
           <Lights />
