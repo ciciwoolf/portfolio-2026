@@ -45,7 +45,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="text-center lg:text-left px-6 sm:px-0 lg:pl-12 w-full pt-16 md:pt-0"
+            className="text-center lg:text-left px-6 sm:px-0 lg:pl-12 w-full pt-12 md:pt-0"
           >
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
