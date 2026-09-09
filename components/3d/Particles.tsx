@@ -69,7 +69,7 @@ export default function Particles({
     if (theme === 'dark') {
       return '#ffffff'; // White particles on dark background
     } else {
-      return '#9984d4'; // Purple accent for light theme
+      return '#b5a4e2'; // Lighter purple for light theme
     }
   }, [theme]);
 
