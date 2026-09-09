@@ -45,7 +45,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="text-center lg:text-left px-6 sm:px-0 lg:pl-12 w-full pt-8 md:pt-0"
+            className="text-center lg:text-left px-6 sm:px-0 lg:pl-12 w-full pt-16 md:pt-0"
           >
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -94,7 +94,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Mobile: 3D Scene, Desktop: Spacer */}
-          <div className="h-[350px] md:h-[500px] lg:h-[600px] w-full relative">
+          <div className="h-[400px] md:h-[500px] lg:h-[600px] w-screen md:w-full relative -ml-4 -mr-4 sm:-ml-6 sm:-mr-6 md:ml-0 md:mr-0">
             {/* Mobile scene */}
             <div className="md:hidden w-full h-full">
               <Scene />
