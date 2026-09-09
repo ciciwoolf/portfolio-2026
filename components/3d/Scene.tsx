@@ -52,7 +52,11 @@ export default function Scene() {
       style={{ background: 'transparent' }}
       gl={{ alpha: true, antialias: true }}
     >
-      <PerspectiveCamera makeDefault position={[0, 0, 15]} fov={45} />
+      <PerspectiveCamera
+        makeDefault
+        position={viewport === 'mobile' ? [0, 0, 13] : [0, 0, 15]}
+        fov={45}
+      />
       <CameraController viewport={viewport} />
       <Suspense fallback={null}>
         <group position={viewport === 'mobile' ? [0, 0, 0] : [7, 0, 0]}>
@@ -71,7 +75,7 @@ export default function Scene() {
         <group
           scale={
             viewport === 'mobile'
-              ? 0.76
+              ? 1.0
               : viewport === 'tablet'
                 ? 0.75
                 : viewport === 'laptop'
@@ -80,7 +84,7 @@ export default function Scene() {
           }
           position={
             viewport === 'mobile'
-              ? [0, 1, 0]
+              ? [0, 1.2, 0]
               : viewport === 'tablet'
                 ? [6, -0.5, 0]
                 : viewport === 'laptop'

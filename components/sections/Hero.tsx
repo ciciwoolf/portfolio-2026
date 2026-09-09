@@ -105,7 +105,7 @@ export default function Hero() {
               />
             </div>
             {/* Attribution Info Button */}
-            <div className="absolute bottom-6 right-6 z-20">
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 md:left-auto md:right-6 md:translate-x-0 z-20">
               <ModelAttribution />
             </div>
           </div>
