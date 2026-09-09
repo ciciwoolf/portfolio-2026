@@ -38,7 +38,7 @@ export default function ModelAttribution() {
 
       {/* Tooltip */}
       {isOpen && (
-        <div className="absolute bottom-0 right-full mr-2 w-64 sm:w-72 z-50 animate-in fade-in slide-in-from-right-2 duration-200">
+        <div className="absolute bottom-2 right-full mr-2 w-64 sm:w-72 z-50 animate-in fade-in slide-in-from-right-2 duration-200">
           <div className="bg-surface border border-border rounded-lg shadow-lg p-4">
             <div className="text-sm text-foreground-secondary space-y-2">
               <p className="font-medium text-foreground">
@@ -57,11 +57,6 @@ export default function ModelAttribution() {
                 from ArtStation.
               </p>
               <p>{content.content}</p>
-            </div>
-            {/* Arrow pointing right */}
-            <div className="absolute top-1/2 -translate-y-1/2 left-full -ml-px">
-              <div className="border-8 border-transparent border-l-surface"></div>
-              <div className="absolute top-1/2 -translate-y-1/2 left-0 -translate-x-full border-8 border-transparent border-l-border"></div>
             </div>
           </div>
         </div>
