@@ -11,29 +11,27 @@ export const BREAKPOINTS = {
 // Viewport type
 export type Viewport = 'mobile' | 'tablet' | 'laptop' | 'desktop';
 
+function getViewport(): Viewport {
+  if (typeof window === 'undefined') return 'desktop';
+
+  const width = window.innerWidth;
+
+  if (width < BREAKPOINTS.mobile) return 'mobile';
+  if (width < BREAKPOINTS.tablet) return 'tablet';
+  if (width < BREAKPOINTS.laptop) return 'laptop';
+  return 'desktop';
+}
+
 /**
  * Hook to detect and track current viewport size
  * Returns the current viewport based on window width
  */
 export function useViewport(): Viewport {
-  const [viewport, setViewport] = useState<Viewport>('desktop');
+  const [viewport, setViewport] = useState<Viewport>(getViewport);
 
   useEffect(() => {
-    const checkViewport = () => {
-      const width = window.innerWidth;
+    const checkViewport = () => setViewport(getViewport());
 
-      if (width < BREAKPOINTS.mobile) {
-        setViewport('mobile');
-      } else if (width < BREAKPOINTS.tablet) {
-        setViewport('tablet');
-      } else if (width < BREAKPOINTS.laptop) {
-        setViewport('laptop');
-      } else {
-        setViewport('desktop');
-      }
-    };
-
-    checkViewport();
     window.addEventListener('resize', checkViewport);
 
     return () => window.removeEventListener('resize', checkViewport);

@@ -40,6 +40,9 @@ export const metadata: Metadata = {
   },
 };
 
+// Runs before first paint so a dark page never flashes white
+const themeScript = `try{document.documentElement.classList.toggle('dark',localStorage.getItem('theme')!=='light')}catch(e){document.documentElement.classList.add('dark')}`;
+
 export default function RootLayout({
   children,
 }: {
@@ -47,6 +50,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${nunito.variable} ${alegreya.variable} ${sourceSans.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="min-h-screen bg-[var(--background)] text-[var(--foreground)] antialiased">
         <ThemeProvider>
           {children}

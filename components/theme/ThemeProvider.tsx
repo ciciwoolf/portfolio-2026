@@ -13,14 +13,12 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>('dark')
-  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setMounted(true)
     // Check localStorage first, then default to dark
     const stored = localStorage.getItem('theme') as Theme | null
     if (stored) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setTheme(stored)
       document.documentElement.classList.toggle('dark', stored === 'dark')
     } else {
@@ -35,11 +33,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     setTheme(newTheme)
     localStorage.setItem('theme', newTheme)
     document.documentElement.classList.toggle('dark', newTheme === 'dark')
-  }
-
-  // Prevent hydration mismatch
-  if (!mounted) {
-    return <>{children}</>
   }
 
   return (
