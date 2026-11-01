@@ -25,6 +25,7 @@ const sourceSans = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.seo.url),
   title: siteConfig.seo.titleTemplate,
   description: siteConfig.seo.description,
   openGraph: {
@@ -32,11 +33,6 @@ export const metadata: Metadata = {
     description: siteConfig.seo.description,
     type: "website",
     url: siteConfig.seo.url,
-    images: [
-      {
-        url: siteConfig.seo.image,
-      },
-    ],
   },
 };
 

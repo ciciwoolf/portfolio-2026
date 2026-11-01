@@ -28,10 +28,10 @@
     "fileName": "resume.pdf"
   },
   "seo": {
-    "titleTemplate": "Portfolio | Christine Woolf",
-    "description": "Full stack engineer specializing in modern mobile and web technologies",
-    "url": "https://christinewoolf.com",
-    "image": "/og-image.jpg"
+    "titleTemplate": "Christine (Cici) Woolf | Full Stack Software Engineer",
+    "description": "Christine (Cici) Woolf is a full stack software engineer specializing in modern mobile and web technologies.",
+    "url": "https://www.christinewoolf.com",
+    "alternateName": "Cici Woolf"
   },
   "footer": {
     "copyright": "All rights reserved."
