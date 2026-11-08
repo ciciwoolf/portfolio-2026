@@ -3,14 +3,20 @@
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { PerspectiveCamera, OrbitControls } from '@react-three/drei';
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
-import { Suspense, useRef, type ReactNode } from 'react';
+import { Suspense, useRef, useState, type ReactNode } from 'react';
 import Model from './Model';
 import Lights from './Lights';
 import Particles from './Particles';
 import { useTheme } from '../theme/ThemeProvider';
 import { useViewport } from '@/lib/constants/viewports';
 
-function CameraController({ viewport }: { viewport: string }) {
+function CameraController({
+  viewport,
+  zoomEnabled,
+}: {
+  viewport: string;
+  zoomEnabled: boolean;
+}) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const controlsRef = useRef<any>(null);
 
@@ -26,9 +32,10 @@ function CameraController({ viewport }: { viewport: string }) {
   return (
     <OrbitControls
       ref={controlsRef}
-      enableZoom={true}
+      // Zoom and drag only while hovering the room, so the page scrolls elsewhere
+      enableZoom={zoomEnabled}
       enablePan={false}
-      enableRotate={viewport !== 'mobile'}
+      enableRotate={viewport !== 'mobile' && zoomEnabled}
       autoRotate={false}
       minAzimuthAngle={0}
       maxAzimuthAngle={Math.PI / 3}
@@ -72,6 +79,7 @@ function FitToHeroContainer({
 export default function Scene() {
   const viewport = useViewport();
   const { theme } = useTheme();
+  const [modelHovered, setModelHovered] = useState(false);
 
   return (
     <Canvas
@@ -84,7 +92,7 @@ export default function Scene() {
         position={viewport === 'mobile' ? [0, 0, 13] : [0, 0, CAMERA_DISTANCE]}
         fov={CAMERA_FOV}
       />
-      <CameraController viewport={viewport} />
+      <CameraController viewport={viewport} zoomEnabled={modelHovered} />
       <Suspense fallback={null}>
         <FitToHeroContainer
           enabled={viewport === 'laptop' || viewport === 'desktop'}
@@ -131,7 +139,12 @@ export default function Scene() {
             }
             rotation={[0, -Math.PI / 2, 0]}
           >
-            <Model />
+            <group
+              onPointerOver={() => setModelHovered(true)}
+              onPointerOut={() => setModelHovered(false)}
+            >
+              <Model />
+            </group>
             <Lights />
           </group>
         </FitToHeroContainer>

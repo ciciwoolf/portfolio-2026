@@ -66,11 +66,12 @@ export default function Hero() {
         </div>
       )}
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 w-full relative z-10">
+      {/* With a mouse on md+, empty parts of this layer pass the pointer to the background scene (touch keeps page scrolling) */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 w-full relative z-10 md:pointer-fine:pointer-events-none">
         {/* Desktop: Split layout, Mobile: Column */}
         <div className="flex flex-col md:grid md:grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Text Content */}
-          <div className="text-center lg:text-left px-6 sm:px-0 lg:pl-12 w-full pt-16 md:pt-0">
+          <div className="text-center lg:text-left px-6 sm:px-0 lg:pl-12 w-full pt-16 md:pt-0 md:pointer-fine:pointer-events-auto">
             <h1
               className="hero-enter text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground"
               style={
@@ -124,7 +125,7 @@ export default function Hero() {
               />
             </div>
             {/* Attribution Info Button */}
-            <div className="absolute bottom-6 right-6 z-20">
+            <div className="absolute bottom-6 right-6 z-20 pointer-events-auto">
               <ModelAttribution />
             </div>
           </div>
