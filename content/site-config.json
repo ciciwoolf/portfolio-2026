@@ -1,13 +1,13 @@
 {
   "personal": {
     "name": "Christine Woolf",
-    "title": "Full Stack Software Engineer",
-    "tagline": "Full Stack Software Engineer crafting interactive digital experiences with modern technologies",
+    "title": "Senior Full Stack Engineer",
+    "tagline": "Senior Full Stack Engineer crafting interactive digital experiences with modern technologies",
     "email": "your.email@example.com"
   },
   "hero": {
     "greeting": "Hi, I'm",
-    "subtitle": "Full Stack Software Engineer crafting interactive digital experiences with modern technologies",
+    "subtitle": "Senior Full Stack Engineer crafting interactive digital experiences with modern technologies",
     "ctaText": "See My Work"
   },
   "infoContent": {
@@ -28,8 +28,8 @@
     "fileName": "resume.pdf"
   },
   "seo": {
-    "titleTemplate": "Christine (Cici) Woolf | Full Stack Software Engineer",
-    "description": "Christine (Cici) Woolf is a full stack software engineer specializing in modern mobile and web technologies.",
+    "titleTemplate": "Christine Woolf | Software Engineer",
+    "description": "Christine Woolf is a full stack software engineer specializing in modern mobile and web technologies.",
     "url": "https://www.christinewoolf.com",
     "alternateName": "Cici Woolf"
   },

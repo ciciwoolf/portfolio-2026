@@ -80,7 +80,7 @@ export default function Skills() {
               {/* Expandable Content */}
               <div
                 className={`overflow-hidden transition-all duration-500 ease-out ${
-                  expandedIds.has(exp.id) ? 'max-h-[800px]' : 'max-h-0'
+                  expandedIds.has(exp.id) ? 'max-h-[1600px]' : 'max-h-0'
                 }`}
               >
                 <div className="px-6 py-4 bg-background-secondary border-t border-border">
