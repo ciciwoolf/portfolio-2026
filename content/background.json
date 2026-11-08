@@ -267,7 +267,7 @@
     {
       "id": "portfolio-v2",
       "name": "Portfolio V2 (Next.js 15 + React 19)",
-      "description": "Complete rewrite of portfolio with Next.js 15, React 19, Three.js 3D scene, and AI chatbot integration using OpenAI GPT-4",
+      "description": "Complete rewrite of portfolio with Next.js 15, React 19, Three.js 3D scene, and AI chatbot integration using Claude Haiku 5.5 via OpenRouter",
       "technologies": [
         "Next.js 15",
         "React 19",
@@ -444,7 +444,7 @@
     },
     {
       "question": "What's her experience with AI?",
-      "answer": "She won 1st place of 20 teams in Capillary's company-wide AI hackathon as the sole engineer. She's reduced ticket delivery time by ~30% using AI-assisted development practices, built reusable AI-assisted developer workflows, and created guides that help engineers build, test, and release correctly. She's also integrated OpenAI GPT-4 into her portfolio for an intelligent chatbot.",
+      "answer": "She won 1st place of 20 teams in Capillary's company-wide AI hackathon as the sole engineer. She's reduced ticket delivery time by ~30% using AI-assisted development practices, built reusable AI-assisted developer workflows, and created guides that help engineers build, test, and release correctly. She's also integrated Claude Haiku 5.5 into her portfolio for an intelligent chatbot.",
       "keywords": ["ai", "artificial intelligence", "ai workflows", "ai agents", "hackathon"]
     },
     {
