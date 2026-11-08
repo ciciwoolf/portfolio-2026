@@ -55,7 +55,7 @@ describe('AI Utility', () => {
       expect(mockCreate).toHaveBeenCalledTimes(1);
       expect(mockCreate).toHaveBeenCalledWith(
         expect.objectContaining({
-          model: 'openai/gpt-3.5-turbo',
+          model: 'anthropic/claude-haiku-5.5',
           temperature: 0.7,
           max_tokens: 500,
         })

@@ -27,7 +27,7 @@ export async function getAIResponse(
 
     // Call OpenRouter API (using OpenAI SDK)
     const completion = await openai.chat.completions.create({
-      model: 'openai/gpt-3.5-turbo', // OpenRouter format: provider/model
+      model: 'anthropic/claude-haiku-5.5', // OpenRouter format: provider/model
       messages: [
         { role: 'system', content: systemPrompt },
         ...messages,
