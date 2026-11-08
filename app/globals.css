@@ -1,5 +1,8 @@
 @import 'tailwindcss';
 
+/* dark: follows the site's theme toggle (.dark on <html>), not the OS setting */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   /* Light theme - Purple/Mint Experiment */
   --background: #ffffff;
@@ -13,6 +16,8 @@
   --accent-hover: #7d68b8;
   --accent-button: #5b1865; /* Deep purple for buttons */
   --accent-button-hover: #4a1252;
+  --link: #5b1865; /* Deep purple: periwinkle accent is too light for text */
+  --link-hover: #4a1252;
   --chat-header: #b7ffd8; /* Aquamarine for chat header */
   --surface: #ffffff;
   --surface-hover: #f8f9fa;
@@ -32,6 +37,8 @@
   --accent-hover: #22d3ee;
   --accent-button: #67e8f9; /* Light blue for buttons (matching accent) */
   --accent-button-hover: #22d3ee;
+  --link: #67e8f9;
+  --link-hover: #22d3ee;
   --chat-header: #67e8f9; /* Light blue for chat header */
   --surface: #251433;
   --surface-hover: #2d1a3d;

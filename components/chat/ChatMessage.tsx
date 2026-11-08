@@ -22,7 +22,7 @@ export default function ChatMessage({ role, content }: ChatMessageProps) {
       <div
         className={`max-w-[80%] rounded-lg px-4 py-3 ${
           isUser
-            ? 'bg-[var(--accent-button)] text-white'
+            ? 'bg-[var(--accent-button)] text-[var(--foreground-on-accent)]'
             : 'bg-[var(--surface-hover)] text-[var(--foreground)]'
         }`}
       >
@@ -31,7 +31,7 @@ export default function ChatMessage({ role, content }: ChatMessageProps) {
           <p className="text-sm whitespace-pre-wrap break-words">{content}</p>
         ) : (
           // Assistant messages: markdown rendering
-          <div className="prose prose-sm max-w-none dark:prose-invert prose-p:my-2 prose-ul:my-2 prose-ol:my-2 prose-a:text-[var(--accent)] prose-a:no-underline hover:prose-a:text-[var(--accent-hover)]">
+          <div className="prose prose-sm max-w-none dark:prose-invert prose-p:my-2 prose-ul:my-2 prose-ol:my-2 [&_a]:text-[var(--link)] [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-[var(--link-hover)]">
             <ReactMarkdown>{content}</ReactMarkdown>
           </div>
         )}
