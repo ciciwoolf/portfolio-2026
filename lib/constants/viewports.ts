@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 
 // Viewport breakpoints (in pixels)
 export const BREAKPOINTS = {
-  mobile: 640,    // 0-639: Mobile
-  tablet: 1024,   // 640-1023: Tablet
+  mobile: 768,    // 0-767: Mobile (matches Tailwind md, where the hero layout changes)
+  tablet: 1024,   // 768-1023: Tablet
   laptop: 1600,   // 1024-1599: Laptop
   desktop: 1600,  // 1600+: Large Desktop
 } as const;

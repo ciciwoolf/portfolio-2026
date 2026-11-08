@@ -1,9 +1,9 @@
 'use client';
 
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { PerspectiveCamera, OrbitControls } from '@react-three/drei';
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
-import { Suspense, useRef } from 'react';
+import { Suspense, useRef, type ReactNode } from 'react';
 import Model from './Model';
 import Lights from './Lights';
 import Particles from './Particles';
@@ -42,6 +42,33 @@ function CameraController({ viewport }: { viewport: string }) {
   );
 }
 
+const CAMERA_DISTANCE = 15;
+const CAMERA_FOV = 45;
+// Canvas height the laptop/desktop positions were tuned against
+const REFERENCE_CANVAS_HEIGHT = 900;
+
+/**
+ * Hero text lives in a fixed-width (max-w-7xl) container, but 3D units grow
+ * with the canvas. On canvases taller than the reference, shrink the scene so
+ * the room keeps the same pixel size and offset and stays beside the text.
+ */
+function FitToHeroContainer({
+  enabled,
+  children,
+}: {
+  enabled: boolean;
+  children: ReactNode;
+}) {
+  const { height } = useThree((state) => state.size);
+  const unitsVisible =
+    2 * CAMERA_DISTANCE * Math.tan(((CAMERA_FOV / 2) * Math.PI) / 180);
+  const pxPerUnit = height / unitsVisible;
+  const referencePxPerUnit = REFERENCE_CANVAS_HEIGHT / unitsVisible;
+  const scale = enabled ? Math.min(1, referencePxPerUnit / pxPerUnit) : 1;
+
+  return <group scale={scale}>{children}</group>;
+}
+
 export default function Scene() {
   const viewport = useViewport();
   const { theme } = useTheme();
@@ -54,48 +81,60 @@ export default function Scene() {
     >
       <PerspectiveCamera
         makeDefault
-        position={viewport === 'mobile' ? [0, 0, 13] : [0, 0, 15]}
-        fov={45}
+        position={viewport === 'mobile' ? [0, 0, 13] : [0, 0, CAMERA_DISTANCE]}
+        fov={CAMERA_FOV}
       />
       <CameraController viewport={viewport} />
       <Suspense fallback={null}>
-        <group position={viewport === 'mobile' ? [0, 0, 0] : [7, 0, 0]}>
-          <Particles
-            count={
-              viewport === 'mobile'
-                ? 80
-                : viewport === 'tablet'
-                  ? 120
-                  : viewport === 'laptop'
-                    ? 140
-                    : 140
-            }
-          />
-        </group>
-        <group
-          scale={
-            viewport === 'mobile'
-              ? 1.0
-              : viewport === 'tablet'
-                ? 0.75
-                : viewport === 'laptop'
-                  ? 0.85
-                  : 0.75
-          }
-          position={
-            viewport === 'mobile'
-              ? [0, 1.2, 0]
-              : viewport === 'tablet'
-                ? [6, -0.5, 0]
-                : viewport === 'laptop'
-                  ? [4, -0.15, 0]
-                  : [4.5, 0, 0]
-          }
-          rotation={[0, -Math.PI / 2, 0]}
+        <FitToHeroContainer
+          enabled={viewport === 'laptop' || viewport === 'desktop'}
         >
-          <Model />
-          <Lights />
-        </group>
+          <group
+            position={
+              viewport === 'mobile'
+                ? [0, 0, 0]
+                : viewport === 'tablet'
+                  ? [0, -3, 0]
+                  : [7, 0, 0]
+            }
+          >
+            <Particles
+              count={
+                viewport === 'mobile'
+                  ? 80
+                  : viewport === 'tablet'
+                    ? 120
+                    : viewport === 'laptop'
+                      ? 140
+                      : 140
+              }
+            />
+          </group>
+          <group
+            scale={
+              viewport === 'mobile'
+                ? 1.0
+                : viewport === 'tablet'
+                  ? 0.55
+                  : viewport === 'laptop'
+                    ? 0.85
+                    : 0.75
+            }
+            position={
+              viewport === 'mobile'
+                ? [0, 1.2, 0]
+                : viewport === 'tablet'
+                  ? [0, -2.5, 0] // Single-column layout: centered below the text
+                  : viewport === 'laptop'
+                    ? [4, -0.15, 0]
+                    : [4.5, 0, 0]
+            }
+            rotation={[0, -Math.PI / 2, 0]}
+          >
+            <Model />
+            <Lights />
+          </group>
+        </FitToHeroContainer>
       </Suspense>
       <EffectComposer>
         <Bloom
