@@ -46,35 +46,35 @@ export default function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-background/80 backdrop-blur-md shadow-sm border-b border-border'
+          ? 'bg-background/80 backdrop-blur-md shadow-sm'
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-2">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-7xl lg:max-w-none mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 2xl:px-20 lg:pt-2 2xl:pt-3">
+        <div className="flex items-center justify-between h-16 lg:h-20 2xl:h-24">
           {/* Brand */}
           <Link
             href="/"
-            className="flex items-center gap-2 text-sm lg:text-base xl:text-lg font-bold text-foreground hover:text-accent transition-colors"
+            className="flex items-center gap-2 lg:gap-3 text-sm lg:text-lg xl:text-xl 2xl:text-2xl font-bold text-foreground hover:text-accent transition-colors"
           >
             <Image
               src="/logo.png"
               alt="Logo"
-              width={32}
-              height={32}
-              className="rounded-sm lg:w-[35px] lg:h-[35px] xl:w-[37px] xl:h-[37px]"
+              width={48}
+              height={48}
+              className="rounded-sm w-8 h-8 lg:w-9 lg:h-9 xl:w-10 xl:h-10 2xl:w-12 2xl:h-12"
             />
             {siteConfig.navigation.brandName}
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center gap-8 lg:gap-10 xl:gap-12 2xl:gap-14">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-sm lg:text-lg xl:text-xl font-medium text-foreground-secondary hover:text-accent transition-colors"
+                className="text-sm lg:text-lg xl:text-xl 2xl:text-[22px] font-medium text-foreground-secondary hover:text-accent transition-colors"
                 {...(link.href.startsWith('http') && {
                   target: '_blank',
                   rel: 'noopener noreferrer',
@@ -93,7 +93,7 @@ export default function Navigation() {
               {theme === 'dark' ? (
                 // Sun icon for light mode
                 <svg
-                  className="h-5 w-5"
+                  className="h-5 w-5 lg:h-6 lg:w-6 2xl:h-7 2xl:w-7"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -108,7 +108,7 @@ export default function Navigation() {
               ) : (
                 // Moon icon for dark mode
                 <svg
-                  className="h-5 w-5"
+                  className="h-5 w-5 lg:h-6 lg:w-6 2xl:h-7 2xl:w-7"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"

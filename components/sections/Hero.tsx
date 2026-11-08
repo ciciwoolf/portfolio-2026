@@ -56,7 +56,7 @@ export default function Hero() {
 
   return (
     <section
-      className="min-h-screen flex items-center bg-gradient-to-b from-background to-background-secondary pt-16 relative"
+      className="min-h-screen flex items-center bg-gradient-to-b from-background to-background-secondary pt-16 lg:pt-20 2xl:pt-24 relative"
       style={{ touchAction: 'pan-y' }}
     >
       {/* Desktop/Tablet: Full-width 3D Scene Background */}
@@ -105,7 +105,7 @@ export default function Hero() {
                 onClick={scrollToWork}
                 variant="cta"
                 size="lg"
-                className="w-60 h-12 md:w-80 md:h-16"
+                className="w-56 h-12 md:w-64 md:h-14 lg:text-xl 2xl:w-72 2xl:h-16 2xl:text-2xl"
               >
                 {siteConfig.hero.ctaText}
               </Button>
