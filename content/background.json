@@ -182,7 +182,7 @@
         "Established platform's deployment and release model with declarative processes and automated sync checks",
         "Owned complex rewards eligibility feature end-to-end within first three months (multi-sprint, hard deadline)",
         "Built internal QA tool that reduced multi-minute manual process to one-click automation",
-        "Implemented Web Vitals monitoring dashboard and bundle analysis for production visibility"
+        "Implemented Web Vitals monitoring dashboard and bundle analysis for production visibility on a Fortune 500 health client's rewards app"
       ],
       "technologies": [
         "React",
@@ -375,7 +375,7 @@
       ]
     },
     "performance_monitoring": {
-      "experience": "Implemented production monitoring and performance optimization at Capillary Technologies",
+      "experience": "Implemented production monitoring and performance optimization at Capillary Technologies on a Fortune 500 health client's rewards app",
       "technologies": [
         "New Relic",
         "Web Vitals (Core Web Vitals: LCP, FID, CLS)",
