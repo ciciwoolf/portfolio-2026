@@ -1,0 +1,34 @@
+# Daily check that the portfolio chatbot still answers.
+# If it fails, GitHub emails the repo owner (Settings → Notifications → Actions).
+name: Chat health check
+
+on:
+  schedule:
+    - cron: '0 14 * * *' # every day at 14:00 UTC
+  workflow_dispatch: # allow manual runs from the Actions tab
+
+jobs:
+  check-chat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Ask the chatbot a question
+        run: |
+          set -euo pipefail
+          body=$(curl -sS --max-time 60 -w '\n%{http_code}' \
+            -X POST https://www.christinewoolf.com/api/chat \
+            -H 'content-type: application/json' \
+            -d '{"messages":[{"role":"user","content":"Health check: reply with one short sentence."}]}')
+          status=$(echo "$body" | tail -n1)
+          json=$(echo "$body" | sed '$d')
+          echo "HTTP $status"
+          echo "$json"
+          if [ "$status" != "200" ]; then
+            echo "::error::Chat API returned HTTP $status"
+            exit 1
+          fi
+          if ! echo "$json" | jq -e '.response | type == "string" and length > 0' > /dev/null; then
+            echo "::error::Chat API returned no response text"
+            exit 1
+          fi
+          echo "Chatbot is healthy."
