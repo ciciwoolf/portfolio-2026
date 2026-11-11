@@ -174,10 +174,10 @@
       "current": true,
       "promotion": "Promoted from Software Engineer to Senior Software Engineer in Apr 2026",
       "type": "Healthcare Technology Platform",
-      "description": "Lead full-stack development on a greenfield healthcare platform with React Native mobile and Next.js web clients. Design and own authorization frameworks under regulatory compliance requirements.",
+      "description": "Senior engineer on a small team building a greenfield healthcare rewards platform from scratch, with React Native mobile and Next.js web clients. Owns the member experience on iOS and Android and its authentication, and set up the backend the team builds its endpoints on.",
       "key_projects": [
         "Won 1st place of 20 teams in company-wide AI hackathon as sole engineer on three-person team",
-        "Designed and own the authorization framework for web and mobile applications under regulatory compliance",
+        "Owns the member experience on iOS and Android and its authentication (Auth0 PKCE)",
         "Built identity resolution layer end-to-end against upstream services with automated integration suite",
         "Established platform's deployment and release model with declarative processes and automated sync checks",
         "Owned complex rewards eligibility feature end-to-end within first three months (multi-sprint, hard deadline)",
@@ -332,7 +332,7 @@
 
   "technical_specialties": {
     "authentication_authorization": {
-      "experience": "Designed and own authorization framework at Capillary Technologies for web and mobile under regulatory compliance",
+      "experience": "Owns the member experience on iOS and Android and its authentication (Auth0 PKCE) at Capillary Technologies",
       "technologies": [
         "Auth0",
         "PKCE flow",
@@ -400,7 +400,7 @@
     "greenfield_architecture": {
       "experience": "Built greenfield healthcare platform from ground up at Capillary Technologies",
       "responsibilities": [
-        "Authorization framework design",
+        "Mobile authentication (Auth0 PKCE)",
         "Mobile + web client architecture",
         "Deployment and release model",
         "Automated integration suite",
@@ -429,17 +429,17 @@
     },
     {
       "question": "What's her current role?",
-      "answer": "She's a Senior Software Engineer at Capillary Technologies, where she designs and owns the authorization framework for a healthcare platform with React Native mobile and Next.js web clients. She won 1st place in the company's AI hackathon and has cut delivery time by ~30% using AI-assisted development practices. She was promoted from Software Engineer to Senior Software Engineer after 7 months.",
+      "answer": "She's a Senior Software Engineer at Capillary Technologies, where she is part of a small team building a greenfield healthcare rewards platform with React Native mobile and Next.js web clients. She owns the member experience on iOS and Android and its authentication. She won 1st place in the company's AI hackathon and has cut delivery time by ~30% using AI-assisted development practices. She was promoted from Software Engineer to Senior Software Engineer after 7 months.",
       "keywords": ["current role", "job", "capillary", "senior engineer", "work"]
     },
     {
       "question": "What kind of projects does she build?",
-      "answer": "She focuses on building secure, compliant web and mobile applications. Recent work includes greenfield healthcare platforms with PHI handling, authorization frameworks using Auth0, identity resolution layers, and production monitoring dashboards. She also builds interactive portfolios, IoT data platforms, and AI-powered applications. She has particular experience with complex authentication flows and real-time systems.",
+      "answer": "She focuses on building secure, compliant web and mobile applications. Recent work includes greenfield healthcare platforms with PHI handling, Auth0 authentication for mobile, identity resolution layers, and production monitoring dashboards. She also builds interactive portfolios, IoT data platforms, and AI-powered applications. She has particular experience with complex authentication flows and real-time systems.",
       "keywords": ["projects", "work", "portfolio", "applications"]
     },
     {
       "question": "What's her experience with authentication and security?",
-      "answer": "She designed and owns the authorization framework for Capillary's web and mobile applications under regulatory compliance. This includes Auth0 integration, PKCE flow, JWT tokens, session cookies, and Next.js BFF pattern. She also handles PHI (Protected Health Information) and HIPAA compliance requirements, including identity resolution and sensitive data access patterns.",
+      "answer": "She owns the member experience on iOS and Android at Capillary and its authentication. That work includes Auth0 integration, the PKCE flow, JWT tokens, session cookies, and the Next.js BFF pattern. She also handles PHI (Protected Health Information) and HIPAA compliance requirements, including identity resolution and sensitive data access patterns.",
       "keywords": ["auth", "authentication", "authorization", "security", "compliance", "auth0"]
     },
     {
@@ -534,7 +534,7 @@
   "achievements": {
     "technical": [
       "Won 1st place of 20 teams in Capillary AI hackathon as sole engineer",
-      "Designed authorization framework for healthcare platform under regulatory compliance",
+      "Owns the member experience and its authentication on iOS and Android for a healthcare platform",
       "Cut delivery time by ~30% using AI-assisted development practices",
       "Built automated integration suite that gates every merge",
       "Sole maintainer of legacy Cordova mobile application at TSI",
