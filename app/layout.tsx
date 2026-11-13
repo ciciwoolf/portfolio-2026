@@ -52,7 +52,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-[var(--background)] text-[var(--foreground)] antialiased">
         <ThemeProvider>
           {children}
-          <ChatWidgetWrapper />
+          {siteConfig.chat.enabled && <ChatWidgetWrapper />}
         </ThemeProvider>
       </body>
     </html>
